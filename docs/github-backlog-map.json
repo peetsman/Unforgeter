@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/peetsman/Unforgeter",
+  "updatedAt": "2026-10-02T16:03:57.103660+00:00",
+  "syncStatus": "complete",
+  "note": "Actual GitHub numbers mapped to stable local IDs; existing content was not overwritten.",
+  "counts": {
+    "labelsCreated": 16,
+    "milestonesCreated": 4,
+    "issuesCreated": 46,
+    "issuesReused": 0
+  },
+  "issues": {
+    "M0-01": {
+      "number": 1,
+      "url": "https://github.com/peetsman/Unforgeter/issues/1",
+      "title": "Initialize iOS application",
+      "state": "open"
+    },
+    "M0-02": {
+      "number": 2,
+      "url": "https://github.com/peetsman/Unforgeter/issues/2",
+      "title": "Define application architecture",
+      "state": "open"
+    },
+    "M0-03": {
+      "number": 3,
+      "url": "https://github.com/peetsman/Unforgeter/issues/3",
+      "title": "Define Rule data model",
+      "state": "open"
+    },
+    "M1-04": {
+      "number": 4,
+      "url": "https://github.com/peetsman/Unforgeter/issues/4",
+      "title": "Build Rules home screen",
+      "state": "open"
+    },
+    "M1-05": {
+      "number": 5,
+      "url": "https://github.com/peetsman/Unforgeter/issues/5",
+      "title": "Build Create Rule flow",
+      "state": "open"
+    },
+    "M1-06": {
+      "number": 6,
+      "url": "https://github.com/peetsman/Unforgeter/issues/6",
+      "title": "Implement location selection",
+      "state": "open"
+    },
+    "M1-07": {
+      "number": 7,
+      "url": "https://github.com/peetsman/Unforgeter/issues/7",
+      "title": "Implement geofence radius selector",
+      "state": "open"
+    },
+    "M1-08": {
+      "number": 8,
+      "url": "https://github.com/peetsman/Unforgeter/issues/8",
+      "title": "Implement active-day selector",
+      "state": "open"
+    },
+    "M1-09": {
+      "number": 9,
+      "url": "https://github.com/peetsman/Unforgeter/issues/9",
+      "title": "Implement active-time window",
+      "state": "open"
+    },
+    "M1-10": {
+      "number": 10,
+      "url": "https://github.com/peetsman/Unforgeter/issues/10",
+      "title": "Implement checklist editor",
+      "state": "open"
+    },
+    "M1-11": {
+      "number": 11,
+      "url": "https://github.com/peetsman/Unforgeter/issues/11",
+      "title": "Implement local Rule persistence",
+      "state": "open"
+    },
+    "M1-12": {
+      "number": 12,
+      "url": "https://github.com/peetsman/Unforgeter/issues/12",
+      "title": "Implement Rule details screen",
+      "state": "open"
+    },
+    "M1-13": {
+      "number": 13,
+      "url": "https://github.com/peetsman/Unforgeter/issues/13",
+      "title": "Edit existing Rule",
+      "state": "open"
+    },
+    "M1-14": {
+      "number": 14,
+      "url": "https://github.com/peetsman/Unforgeter/issues/14",
+      "title": "Enable/disable Rule",
+      "state": "open"
+    },
+    "M1-15": {
+      "number": 15,
+      "url": "https://github.com/peetsman/Unforgeter/issues/15",
+      "title": "Delete Rule",
+      "state": "open"
+    },
+    "M2-16": {
+      "number": 16,
+      "url": "https://github.com/peetsman/Unforgeter/issues/16",
+      "title": "Implement location permission flow",
+      "state": "open"
+    },
+    "M2-17": {
+      "number": 17,
+      "url": "https://github.com/peetsman/Unforgeter/issues/17",
+      "title": "Register geofence for enabled Rule",
+      "state": "open"
+    },
+    "M2-18": {
+      "number": 18,
+      "url": "https://github.com/peetsman/Unforgeter/issues/18",
+      "title": "Detect geofence EXIT event",
+      "state": "open"
+    },
+    "M2-19": {
+      "number": 19,
+      "url": "https://github.com/peetsman/Unforgeter/issues/19",
+      "title": "Build Rule evaluation engine",
+      "state": "open"
+    },
+    "M2-20": {
+      "number": 20,
+      "url": "https://github.com/peetsman/Unforgeter/issues/20",
+      "title": "Implement notification permissions",
+      "state": "open"
+    },
+    "M2-21": {
+      "number": 21,
+      "url": "https://github.com/peetsman/Unforgeter/issues/21",
+      "title": "Trigger Unforgeter notification",
+      "state": "open"
+    },
+    "M2-22": {
+      "number": 22,
+      "url": "https://github.com/peetsman/Unforgeter/issues/22",
+      "title": "Build triggered checklist screen",
+      "state": "open"
+    },
+    "M2-23": {
+      "number": 23,
+      "url": "https://github.com/peetsman/Unforgeter/issues/23",
+      "title": "Prevent duplicate notifications",
+      "state": "open"
+    },
+    "M2-24": {
+      "number": 24,
+      "url": "https://github.com/peetsman/Unforgeter/issues/24",
+      "title": "Add developer geofence testing tools",
+      "state": "open"
+    },
+    "M3-25": {
+      "number": 25,
+      "url": "https://github.com/peetsman/Unforgeter/issues/25",
+      "title": "Design Unforgeter app icon",
+      "state": "open"
+    },
+    "M3-26": {
+      "number": 26,
+      "url": "https://github.com/peetsman/Unforgeter/issues/26",
+      "title": "Create onboarding experience",
+      "state": "open"
+    },
+    "M3-27": {
+      "number": 27,
+      "url": "https://github.com/peetsman/Unforgeter/issues/27",
+      "title": "Improve empty states",
+      "state": "open"
+    },
+    "M3-28": {
+      "number": 28,
+      "url": "https://github.com/peetsman/Unforgeter/issues/28",
+      "title": "Add accessibility support",
+      "state": "open"
+    },
+    "M3-29": {
+      "number": 29,
+      "url": "https://github.com/peetsman/Unforgeter/issues/29",
+      "title": "Add dark mode",
+      "state": "open"
+    },
+    "M3-30": {
+      "number": 30,
+      "url": "https://github.com/peetsman/Unforgeter/issues/30",
+      "title": "Add Rule duplication",
+      "state": "open"
+    },
+    "M3-31": {
+      "number": 31,
+      "url": "https://github.com/peetsman/Unforgeter/issues/31",
+      "title": "Add notification/history functionality",
+      "state": "open"
+    },
+    "M3-32": {
+      "number": 32,
+      "url": "https://github.com/peetsman/Unforgeter/issues/32",
+      "title": "Add human-readable location naming",
+      "state": "open"
+    },
+    "M3-33": {
+      "number": 33,
+      "url": "https://github.com/peetsman/Unforgeter/issues/33",
+      "title": "Add preset Rule templates",
+      "state": "open"
+    },
+    "M3-34": {
+      "number": 34,
+      "url": "https://github.com/peetsman/Unforgeter/issues/34",
+      "title": "Add automated UI tests",
+      "state": "open"
+    },
+    "M3-35": {
+      "number": 35,
+      "url": "https://github.com/peetsman/Unforgeter/issues/35",
+      "title": "Expand unit-test suite",
+      "state": "open"
+    },
+    "M3-36": {
+      "number": 36,
+      "url": "https://github.com/peetsman/Unforgeter/issues/36",
+      "title": "Add privacy information screen",
+      "state": "open"
+    },
+    "M3-37": {
+      "number": 37,
+      "url": "https://github.com/peetsman/Unforgeter/issues/37",
+      "title": "Create README screenshots/demo GIF",
+      "state": "open"
+    },
+    "M3-38": {
+      "number": 38,
+      "url": "https://github.com/peetsman/Unforgeter/issues/38",
+      "title": "Document architecture and technical decisions",
+      "state": "open"
+    },
+    "M4-39": {
+      "number": 39,
+      "url": "https://github.com/peetsman/Unforgeter/issues/39",
+      "title": "Configure application signing",
+      "state": "open"
+    },
+    "M4-40": {
+      "number": 40,
+      "url": "https://github.com/peetsman/Unforgeter/issues/40",
+      "title": "Configure TestFlight build",
+      "state": "open"
+    },
+    "M4-41": {
+      "number": 41,
+      "url": "https://github.com/peetsman/Unforgeter/issues/41",
+      "title": "Recruit beta testers",
+      "state": "open"
+    },
+    "M4-42": {
+      "number": 42,
+      "url": "https://github.com/peetsman/Unforgeter/issues/42",
+      "title": "Create beta feedback process",
+      "state": "open"
+    },
+    "M4-43": {
+      "number": 43,
+      "url": "https://github.com/peetsman/Unforgeter/issues/43",
+      "title": "Conduct real-world geofence reliability testing",
+      "state": "open"
+    },
+    "M4-44": {
+      "number": 44,
+      "url": "https://github.com/peetsman/Unforgeter/issues/44",
+      "title": "Analyze beta feedback",
+      "state": "open"
+    },
+    "M4-45": {
+      "number": 45,
+      "url": "https://github.com/peetsman/Unforgeter/issues/45",
+      "title": "Prioritize V1 release bugs",
+      "state": "open"
+    },
+    "M4-46": {
+      "number": 46,
+      "url": "https://github.com/peetsman/Unforgeter/issues/46",
+      "title": "Prepare App Store listing",
+      "state": "open"
+    }
+  }
+}

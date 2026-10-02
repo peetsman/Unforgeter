@@ -4,7 +4,7 @@
 
 Unforgeter is an iOS reminder app for recurring routines: leaving a chosen location during an active day/time window should open the right essentials checklist. Its proposed differentiation combines departure, schedule, and routine-specific items; location reminders already exist.
 
-**Current state: native technical proof prepared; physical geofence behavior unverified.** The developer currently has Windows only. No successful iOS build, simulator run, or physical-iPhone test is claimed. See the [verification status](docs/status.md).
+**Current state: the technical prototype builds and launches in an iPhone simulator; all 31 Rule tests pass.** Development happens on Windows, with native verification on GitHub's Mac runner. Physical geofence behavior remains unverified. See the [passing CI run](https://github.com/peetsman/Unforgeter/actions/runs/37032116531) and [verification status](docs/status.md).
 
 ## What is implemented
 
@@ -16,6 +16,8 @@ Unforgeter is an iOS reminder app for recurring routines: leaving a chosen locat
 - A separate [UnforgeterCore package](Packages/UnforgeterCore/README.md) containing validated Rules, pure schedule evaluation, JSON persistence, and 31 authored test methods.
 
 The Rule package is **not yet wired into the iOS proof**. Custom Rule creation, editing, schedules, and personalized checklists remain the next product work after the physical feasibility test. There are no accounts, backend, cloud synchronization, AI, or accessory integrations.
+
+[View the actual simulator launch screen](docs/images/simulator-launch.png). This is a technical test screen, not the finished Rules interface.
 
 ## Development setup
 
@@ -60,7 +62,7 @@ xcodebuild -project Unforgeter.xcodeproj -scheme Unforgeter \
   -derivedDataPath build/Debug CODE_SIGNING_ALLOWED=NO build
 ```
 
-The [prepared CI workflow](.github/workflows/ios.yml) uses `macos-15`, runs metadata checks and core tests, and builds Debug and Release for a generic iOS Simulator. Its launch smoke test installs Debug on an available iPhone simulator, checks that the process remains running after five seconds, and saves a screenshot artifact. That check covers basic launch, not permission flows, checklist navigation, or physical departures. Native and test execution results remain pending until captured in [status](docs/status.md).
+The [CI workflow](.github/workflows/ios.yml) uses `macos-15`, runs metadata checks and core tests, and builds Debug and Release for a generic iOS Simulator. Debug uses ad hoc signing for simulator installation; no Apple account credentials are required in CI. The launch smoke test checks that the app remains running after five seconds and saves a screenshot artifact. That check covers basic launch, not permission flows, checklist navigation, or physical departures. Executed results are recorded in [status](docs/status.md).
 
 ## Project planning
 
@@ -86,6 +88,6 @@ To publish the prepared backlog with authorized GitHub credentials:
 python scripts/sync_github_backlog.py --apply
 ```
 
-The apply mode creates missing labels, milestones, and issues in `peetsman/Unforgeter`; it uses stable planning IDs to avoid duplicates on repeat runs and preserves existing resources. It does not create a project board. Local planning numbers are not assumed GitHub issue numbers, and prepared files alone do not establish that anything has been published.
+All 46 issues are [published on GitHub](https://github.com/peetsman/Unforgeter/issues), with one simple category label per issue. The [publication map](docs/github-backlog-map.json) records actual issue numbers. The apply mode creates only missing resources, preserves existing content, and avoids duplicates; it does not create a project board.
 
 See [architecture](docs/architecture.md), [geofencing validation](docs/geofencing-validation.md), and [current status](docs/status.md) before extending the app. Keep real coordinates, signing material, and unredacted device logs out of Git.

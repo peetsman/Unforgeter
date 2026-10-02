@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "project": "Unforgeter",
   "repository": "https://github.com/peetsman/Unforgeter",
-  "status": "Local planning data only. No GitHub milestones, labels, or issues are asserted to exist or to have been created.",
+  "status": "Planning source. Published GitHub issue numbers are recorded separately in docs/github-backlog-map.json; acceptance criteria are not completion claims.",
   "identifierPolicy": "localId is a stable planning identifier; sourceNumber preserves the user's source numbering and is never a GitHub issue number. Resolve milestone IDs and create labels before future API import. Do not send sourceNumber as an issue number.",
   "executionOrder": "Minimal M0 native setup → physical proof slice from M2-16, M2-20, M2-17, M2-18, and M2-21 → complete M1 Rules MVP → complete M2 integration → M3 → M4. Milestone numbering remains unchanged.",
   "proofGate": {
@@ -47,23 +47,10 @@
   ],
   "labels": [
     "feature",
-    "bug",
     "setup",
-    "architecture",
-    "UI/UX",
-    "location",
-    "geofencing",
-    "notifications",
-    "data",
     "testing",
     "documentation",
-    "privacy",
-    "MVP",
-    "future",
-    "P0-critical",
-    "P1-high",
-    "P2-medium",
-    "P3-low"
+    "bug"
   ],
   "boardWorkflow": [
     "BACKLOG",
@@ -79,9 +66,7 @@
       "milestone": "M0",
       "title": "Initialize iOS application",
       "labels": [
-        "setup",
-        "MVP",
-        "P0-critical"
+        "setup"
       ],
       "priority": "P0-critical",
       "state": "planned",
@@ -111,10 +96,7 @@
       "milestone": "M0",
       "title": "Define application architecture",
       "labels": [
-        "architecture",
-        "documentation",
-        "MVP",
-        "P1-high"
+        "setup"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -143,10 +125,7 @@
       "milestone": "M0",
       "title": "Define Rule data model",
       "labels": [
-        "architecture",
-        "data",
-        "MVP",
-        "P1-high"
+        "setup"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -178,10 +157,7 @@
       "milestone": "M1",
       "title": "Build Rules home screen",
       "labels": [
-        "feature",
-        "UI/UX",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -209,10 +185,7 @@
       "milestone": "M1",
       "title": "Build Create Rule flow",
       "labels": [
-        "feature",
-        "UI/UX",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -249,11 +222,7 @@
       "milestone": "M1",
       "title": "Implement location selection",
       "labels": [
-        "feature",
-        "UI/UX",
-        "location",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -279,11 +248,7 @@
       "milestone": "M1",
       "title": "Implement geofence radius selector",
       "labels": [
-        "feature",
-        "UI/UX",
-        "geofencing",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -312,11 +277,7 @@
       "milestone": "M1",
       "title": "Implement active-day selector",
       "labels": [
-        "feature",
-        "UI/UX",
-        "data",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -341,11 +302,7 @@
       "milestone": "M1",
       "title": "Implement active-time window",
       "labels": [
-        "feature",
-        "UI/UX",
-        "data",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -372,11 +329,7 @@
       "milestone": "M1",
       "title": "Implement checklist editor",
       "labels": [
-        "feature",
-        "UI/UX",
-        "data",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -403,10 +356,7 @@
       "milestone": "M1",
       "title": "Implement local Rule persistence",
       "labels": [
-        "feature",
-        "data",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -434,10 +384,7 @@
       "milestone": "M1",
       "title": "Implement Rule details screen",
       "labels": [
-        "feature",
-        "UI/UX",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -463,11 +410,7 @@
       "milestone": "M1",
       "title": "Edit existing Rule",
       "labels": [
-        "feature",
-        "UI/UX",
-        "data",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -495,11 +438,7 @@
       "milestone": "M1",
       "title": "Enable/disable Rule",
       "labels": [
-        "feature",
-        "UI/UX",
-        "data",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -525,11 +464,7 @@
       "milestone": "M1",
       "title": "Delete Rule",
       "labels": [
-        "feature",
-        "data",
-        "geofencing",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -555,11 +490,7 @@
       "milestone": "M2",
       "title": "Implement location permission flow",
       "labels": [
-        "feature",
-        "location",
-        "privacy",
-        "MVP",
-        "P0-critical"
+        "feature"
       ],
       "priority": "P0-critical",
       "state": "planned",
@@ -589,11 +520,7 @@
       "milestone": "M2",
       "title": "Register geofence for enabled Rule",
       "labels": [
-        "feature",
-        "location",
-        "geofencing",
-        "MVP",
-        "P0-critical"
+        "feature"
       ],
       "priority": "P0-critical",
       "state": "planned",
@@ -623,12 +550,7 @@
       "milestone": "M2",
       "title": "Detect geofence EXIT event",
       "labels": [
-        "feature",
-        "location",
-        "geofencing",
-        "testing",
-        "MVP",
-        "P0-critical"
+        "feature"
       ],
       "priority": "P0-critical",
       "state": "planned",
@@ -657,11 +579,7 @@
       "milestone": "M2",
       "title": "Build Rule evaluation engine",
       "labels": [
-        "feature",
-        "architecture",
-        "testing",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -690,11 +608,7 @@
       "milestone": "M2",
       "title": "Implement notification permissions",
       "labels": [
-        "feature",
-        "notifications",
-        "privacy",
-        "MVP",
-        "P0-critical"
+        "feature"
       ],
       "priority": "P0-critical",
       "state": "planned",
@@ -721,11 +635,7 @@
       "milestone": "M2",
       "title": "Trigger Unforgeter notification",
       "labels": [
-        "feature",
-        "notifications",
-        "geofencing",
-        "MVP",
-        "P0-critical"
+        "feature"
       ],
       "priority": "P0-critical",
       "state": "planned",
@@ -757,11 +667,7 @@
       "milestone": "M2",
       "title": "Build triggered checklist screen",
       "labels": [
-        "feature",
-        "UI/UX",
-        "notifications",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -788,12 +694,7 @@
       "milestone": "M2",
       "title": "Prevent duplicate notifications",
       "labels": [
-        "feature",
-        "geofencing",
-        "notifications",
-        "testing",
-        "MVP",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -822,12 +723,7 @@
       "milestone": "M2",
       "title": "Add developer geofence testing tools",
       "labels": [
-        "setup",
-        "testing",
-        "geofencing",
-        "notifications",
-        "MVP",
-        "P1-high"
+        "testing"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -855,8 +751,7 @@
       "milestone": "M3",
       "title": "Design Unforgeter app icon",
       "labels": [
-        "UI/UX",
-        "P2-medium"
+        "feature"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -877,10 +772,7 @@
       "milestone": "M3",
       "title": "Create onboarding experience",
       "labels": [
-        "feature",
-        "UI/UX",
-        "privacy",
-        "P2-medium"
+        "feature"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -901,8 +793,7 @@
       "milestone": "M3",
       "title": "Improve empty states",
       "labels": [
-        "UI/UX",
-        "P2-medium"
+        "feature"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -923,9 +814,7 @@
       "milestone": "M3",
       "title": "Add accessibility support",
       "labels": [
-        "UI/UX",
-        "testing",
-        "P1-high"
+        "feature"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -946,9 +835,7 @@
       "milestone": "M3",
       "title": "Add dark mode",
       "labels": [
-        "UI/UX",
-        "testing",
-        "P2-medium"
+        "feature"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -969,9 +856,7 @@
       "milestone": "M3",
       "title": "Add Rule duplication",
       "labels": [
-        "feature",
-        "data",
-        "P2-medium"
+        "feature"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -992,11 +877,7 @@
       "milestone": "M3",
       "title": "Add notification/history functionality",
       "labels": [
-        "feature",
-        "notifications",
-        "data",
-        "privacy",
-        "P3-low"
+        "feature"
       ],
       "priority": "P3-low",
       "state": "planned",
@@ -1017,10 +898,7 @@
       "milestone": "M3",
       "title": "Add human-readable location naming",
       "labels": [
-        "feature",
-        "location",
-        "UI/UX",
-        "P2-medium"
+        "feature"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -1041,9 +919,7 @@
       "milestone": "M3",
       "title": "Add preset Rule templates",
       "labels": [
-        "feature",
-        "UI/UX",
-        "P3-low"
+        "feature"
       ],
       "priority": "P3-low",
       "state": "planned",
@@ -1064,8 +940,7 @@
       "milestone": "M3",
       "title": "Add automated UI tests",
       "labels": [
-        "testing",
-        "P2-medium"
+        "testing"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -1086,8 +961,7 @@
       "milestone": "M3",
       "title": "Expand unit-test suite",
       "labels": [
-        "testing",
-        "P1-high"
+        "testing"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -1108,10 +982,7 @@
       "milestone": "M3",
       "title": "Add privacy information screen",
       "labels": [
-        "feature",
-        "privacy",
-        "documentation",
-        "P1-high"
+        "documentation"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -1132,8 +1003,7 @@
       "milestone": "M3",
       "title": "Create README screenshots/demo GIF",
       "labels": [
-        "documentation",
-        "P2-medium"
+        "documentation"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -1154,9 +1024,7 @@
       "milestone": "M3",
       "title": "Document architecture and technical decisions",
       "labels": [
-        "architecture",
-        "documentation",
-        "P2-medium"
+        "documentation"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -1177,8 +1045,7 @@
       "milestone": "M4",
       "title": "Configure application signing",
       "labels": [
-        "setup",
-        "P1-high"
+        "setup"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -1199,9 +1066,7 @@
       "milestone": "M4",
       "title": "Configure TestFlight build",
       "labels": [
-        "setup",
-        "testing",
-        "P1-high"
+        "setup"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -1226,8 +1091,7 @@
       "milestone": "M4",
       "title": "Recruit beta testers",
       "labels": [
-        "testing",
-        "P2-medium"
+        "testing"
       ],
       "priority": "P2-medium",
       "state": "planned",
@@ -1250,9 +1114,7 @@
       "milestone": "M4",
       "title": "Create beta feedback process",
       "labels": [
-        "testing",
-        "documentation",
-        "P1-high"
+        "testing"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -1273,10 +1135,7 @@
       "milestone": "M4",
       "title": "Conduct real-world geofence reliability testing",
       "labels": [
-        "testing",
-        "geofencing",
-        "location",
-        "P0-critical"
+        "testing"
       ],
       "priority": "P0-critical",
       "state": "planned",
@@ -1303,9 +1162,7 @@
       "milestone": "M4",
       "title": "Analyze beta feedback",
       "labels": [
-        "testing",
-        "documentation",
-        "P1-high"
+        "testing"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -1329,9 +1186,7 @@
       "milestone": "M4",
       "title": "Prioritize V1 release bugs",
       "labels": [
-        "bug",
-        "testing",
-        "P1-high"
+        "bug"
       ],
       "priority": "P1-high",
       "state": "planned",
@@ -1354,9 +1209,7 @@
       "milestone": "M4",
       "title": "Prepare App Store listing",
       "labels": [
-        "documentation",
-        "privacy",
-        "P2-medium"
+        "documentation"
       ],
       "priority": "P2-medium",
       "state": "planned",

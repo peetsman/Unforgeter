@@ -16,4 +16,4 @@ Run the test suite from this directory on a machine with Swift installed:
 swift test
 ```
 
-Tests cover the project brief's examples, schedule boundaries, overnight attribution, time zones and daylight-saving transitions, cooldown, validation, checklist identity, persistence round trips, and preservation of malformed files. The initial Windows authoring environment has no Swift toolchain; these tests were written and statically reviewed but were not executed there. A successful macOS CI or local Swift run is required to verify compilation and test results.
+Tests cover the project brief's examples, schedule boundaries, overnight attribution, time zones and daylight-saving transitions, cooldown, validation, checklist identity, persistence round trips, and preservation of malformed files. All 31 tests passed on the [macOS CI runner](https://github.com/peetsman/Unforgeter/actions/runs/37032116531) with Swift 6.1.2 in Swift 5 language mode. The Windows authoring host still has no local Swift toolchain.

@@ -1,8 +1,8 @@
 # Unforgeter backlog
 
-This is the local planning source for **46 planned items**. IDs such as `M0-01` are stable local identifiers; the trailing number preserves the original planning sequence. They are **not GitHub issue numbers**. No remote issue, label, milestone, or project board is represented as created by these files.
+This is the local planning source for **46 planned items**. IDs such as `M0-01` are stable local identifiers; the trailing number preserves the original planning sequence. They are **not GitHub issue numbers**. All 46 items have now been published to [GitHub Issues](https://github.com/peetsman/Unforgeter/issues) across the five milestones. The [publication map](github-backlog-map.json) records actual returned issue numbers; no project board has been created.
 
-The structured counterpart, [backlog.json](backlog.json), includes import-ready titles, bodies, labels, milestone keys, and dependency IDs. Future publishing must resolve GitHub milestone IDs and labels; the local IDs should be retained in issue bodies so references can be mapped after creation.
+The structured counterpart, [backlog.json](backlog.json), retains planning titles, bodies, labels, milestone keys, and dependency IDs. The synchronization script preserves existing GitHub content and uses stable body markers to avoid duplicate imports. Planning checkboxes below remain the original acceptance criteria; consult GitHub and [verification status](status.md) for implementation evidence.
 
 ## First practical gate: physical geofence proof
 
@@ -28,9 +28,9 @@ The proof is currently **unverified**. The developer has **Windows only**. Sourc
 
 ## Labels and workflow
 
-Recommended category labels: `feature`, `bug`, `setup`, `architecture`, `UI/UX`, `location`, `geofencing`, `notifications`, `data`, `testing`, `documentation`, `privacy`, `MVP`, `future`.
+Each GitHub issue has one simple type label: `feature`, `setup`, `testing`, `documentation`, or `bug`.
 
-Priorities: `P0-critical`, `P1-high`, `P2-medium`, `P3-low`. Priority assignments below are proposed planning choices; `P0-critical` marks a feasibility or release gate and does not change the milestone order.
+Priority values remain internal planning metadata in [backlog.json](backlog.json); they are not applied as GitHub labels.
 
 Board: **BACKLOG → READY → IN PROGRESS → REVIEW / TEST → DONE**. All items are planned; unchecked boxes are not completion claims.
 
@@ -50,7 +50,7 @@ Repository, architecture and technical foundation.
 
 ### M0-01 — Initialize iOS application
 
-**Status:** Planned · **Priority:** P0-critical · **Labels:** `setup`, `MVP`
+**Status:** Planned · **Label:** `setup`
 
 Create the native SwiftUI iOS application and repository foundation.
 
@@ -72,7 +72,7 @@ Implementation notes:
 
 ### M0-02 — Define application architecture
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `architecture`, `documentation`, `MVP`
+**Status:** Planned · **Label:** `setup`
 
 Define a small, understandable native architecture without unnecessary abstraction.
 
@@ -93,7 +93,7 @@ Implementation notes:
 
 ### M0-03 — Define Rule data model
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `architecture`, `data`, `MVP`
+**Status:** Planned · **Label:** `setup`
 
 Represent the departure schedule and its checklist as a persistable Rule.
 
@@ -121,7 +121,7 @@ Create and manage reminder Rules.
 
 ### M1-04 — Build Rules home screen
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Give users a clear overview of saved Rules and a route to create one.
 
@@ -138,7 +138,7 @@ Final completion dependencies: `M0-03`, `M1-11`.
 
 ### M1-05 — Build Create Rule flow
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Create a departure Rule through the agreed name, location, radius, schedule, and checklist workflow.
 
@@ -162,7 +162,7 @@ Final completion dependencies: `M0-03`, `M1-06`, `M1-07`, `M1-08`, `M1-09`, `M1-
 
 ### M1-06 — Implement location selection
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `location`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Use MapKit to choose the origin location for a Rule.
 
@@ -178,7 +178,7 @@ Final completion dependencies: `M0-03`.
 
 ### M1-07 — Implement geofence radius selector
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `geofencing`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Let users configure and understand the chosen radius.
 
@@ -199,7 +199,7 @@ Final completion dependencies: `M1-06`.
 
 ### M1-08 — Implement active-day selector
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `data`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Support recurring weekday schedules.
 
@@ -214,7 +214,7 @@ Final completion dependencies: `M0-03`.
 
 ### M1-09 — Implement active-time window
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `data`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Configure the local time window used by Rule evaluation.
 
@@ -233,7 +233,7 @@ Final completion dependencies: `M0-03`.
 
 ### M1-10 — Implement checklist editor
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `data`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Create and maintain a personalized, ordered checklist.
 
@@ -250,7 +250,7 @@ Final completion dependencies: `M0-03`.
 
 ### M1-11 — Implement local Rule persistence
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `data`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Keep Rules locally across launches without an external server.
 
@@ -270,7 +270,7 @@ Final completion dependencies: `M0-03`.
 
 ### M1-12 — Implement Rule details screen
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Display the Rule name, location, radius, days, time, and checklist together.
 
@@ -285,7 +285,7 @@ Final completion dependencies: `M1-04`, `M1-11`.
 
 ### M1-13 — Edit existing Rule
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `data`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Allow changes to all properties of a saved Rule.
 
@@ -304,7 +304,7 @@ Final completion dependencies: `M1-05`, `M1-11`.
 
 ### M1-14 — Enable/disable Rule
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `data`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Temporarily suspend a Rule without deleting it.
 
@@ -319,7 +319,7 @@ Final completion dependencies: `M1-11`, `M2-19`.
 
 ### M1-15 — Delete Rule
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `data`, `geofencing`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Remove a Rule and its monitoring after user confirmation.
 
@@ -338,7 +338,7 @@ Make Rules actually trigger from real-world geofence exits.
 
 ### M2-16 — Implement location permission flow
 
-**Status:** Planned · **Priority:** P0-critical · **Labels:** `feature`, `location`, `privacy`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Explain and request the location access needed for departure monitoring.
 
@@ -360,7 +360,7 @@ Final completion dependencies: `M0-01`.
 
 ### M2-17 — Register geofence for enabled Rule
 
-**Status:** Planned · **Priority:** P0-critical · **Labels:** `feature`, `location`, `geofencing`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Reconcile enabled Rule regions with iOS monitoring.
 
@@ -381,7 +381,7 @@ Final completion dependencies: `M0-03`, `M2-16`.
 
 ### M2-18 — Detect geofence EXIT event
 
-**Status:** Planned · **Priority:** P0-critical · **Labels:** `feature`, `location`, `geofencing`, `testing`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Prove the highest-risk behavior: a physical iPhone reports leaving a monitored region.
 
@@ -402,7 +402,7 @@ Final completion dependencies: `M2-17`.
 
 ### M2-19 — Build Rule evaluation engine
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `architecture`, `testing`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Evaluate the enabled state, active day, and time window independently from iOS services.
 
@@ -423,7 +423,7 @@ Final completion dependencies: `M0-03`.
 
 ### M2-20 — Implement notification permissions
 
-**Status:** Planned · **Priority:** P0-critical · **Labels:** `feature`, `notifications`, `privacy`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Request and explain local-notification authorization.
 
@@ -442,7 +442,7 @@ Final completion dependencies: `M0-01`.
 
 ### M2-21 — Trigger Unforgeter notification
 
-**Status:** Planned · **Priority:** P0-critical · **Labels:** `feature`, `notifications`, `geofencing`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Send the matching reminder after a valid departure and route the notification tap to its checklist.
 
@@ -462,7 +462,7 @@ Final completion dependencies: `M2-18`, `M2-19`, `M2-20`, `M2-22`, `M2-23`.
 
 ### M2-22 — Build triggered checklist screen
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `UI/UX`, `notifications`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Show the checklist associated with the departure notification.
 
@@ -481,7 +481,7 @@ Final completion dependencies: `M1-11`.
 
 ### M2-23 — Prevent duplicate notifications
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `geofencing`, `notifications`, `testing`, `MVP`
+**Status:** Planned · **Label:** `feature`
 
 Suppress repeated boundary events while allowing later legitimate departures.
 
@@ -501,7 +501,7 @@ Final completion dependencies: `M0-03`, `M2-19`.
 
 ### M2-24 — Add developer geofence testing tools
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `setup`, `testing`, `geofencing`, `notifications`, `MVP`
+**Status:** Planned · **Label:** `testing`
 
 Make exit, evaluation, and notification paths inspectable during development.
 
@@ -524,7 +524,7 @@ Turn the working prototype into a portfolio/beta-quality application.
 
 ### M3-25 — Design Unforgeter app icon
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `UI/UX`
+**Status:** Planned · **Label:** `feature`
 
 Create a recognizable app icon suited to the Unforgeter name and purpose.
 
@@ -535,7 +535,7 @@ Acceptance criteria (proposed):
 
 ### M3-26 — Create onboarding experience
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `feature`, `UI/UX`, `privacy`
+**Status:** Planned · **Label:** `feature`
 
 Introduce departure Rules and explain required permissions.
 
@@ -546,7 +546,7 @@ Acceptance criteria (proposed):
 
 ### M3-27 — Improve empty states
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `UI/UX`
+**Status:** Planned · **Label:** `feature`
 
 Help users recover from empty or unavailable states.
 
@@ -557,7 +557,7 @@ Acceptance criteria (proposed):
 
 ### M3-28 — Add accessibility support
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `UI/UX`, `testing`
+**Status:** Planned · **Label:** `feature`
 
 Make core Rule and checklist tasks accessible.
 
@@ -568,7 +568,7 @@ Acceptance criteria (proposed):
 
 ### M3-29 — Add dark mode
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `UI/UX`, `testing`
+**Status:** Planned · **Label:** `feature`
 
 Make the interface readable in both appearance modes.
 
@@ -579,7 +579,7 @@ Acceptance criteria (proposed):
 
 ### M3-30 — Add Rule duplication
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `feature`, `data`
+**Status:** Planned · **Label:** `feature`
 
 Use an existing Rule as a starting point for another routine.
 
@@ -590,7 +590,7 @@ Acceptance criteria (proposed):
 
 ### M3-31 — Add notification/history functionality
 
-**Status:** Planned · **Priority:** P3-low · **Labels:** `feature`, `notifications`, `data`, `privacy`
+**Status:** Planned · **Label:** `feature`
 
 Provide a small local history of reminder activity.
 
@@ -601,7 +601,7 @@ Acceptance criteria (proposed):
 
 ### M3-32 — Add human-readable location naming
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `feature`, `location`, `UI/UX`
+**Status:** Planned · **Label:** `feature`
 
 Show names such as Home alongside the underlying location.
 
@@ -612,7 +612,7 @@ Acceptance criteria (proposed):
 
 ### M3-33 — Add preset Rule templates
 
-**Status:** Planned · **Priority:** P3-low · **Labels:** `feature`, `UI/UX`
+**Status:** Planned · **Label:** `feature`
 
 Offer editable starting points for common routines.
 
@@ -623,7 +623,7 @@ Acceptance criteria (proposed):
 
 ### M3-34 — Add automated UI tests
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `testing`
+**Status:** Planned · **Label:** `testing`
 
 Cover the highest-value user flows with native UI automation.
 
@@ -634,7 +634,7 @@ Acceptance criteria (proposed):
 
 ### M3-35 — Expand unit-test suite
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `testing`
+**Status:** Planned · **Label:** `testing`
 
 Cover remaining meaningful edge cases in Rule logic and persistence.
 
@@ -645,7 +645,7 @@ Acceptance criteria (proposed):
 
 ### M3-36 — Add privacy information screen
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `feature`, `privacy`, `documentation`
+**Status:** Planned · **Label:** `documentation`
 
 Explain why location and notification access is used and where data remains.
 
@@ -656,7 +656,7 @@ Acceptance criteria (proposed):
 
 ### M3-37 — Create README screenshots/demo GIF
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `documentation`
+**Status:** Planned · **Label:** `documentation`
 
 Show the implemented product in the portfolio README.
 
@@ -667,7 +667,7 @@ Acceptance criteria (proposed):
 
 ### M3-38 — Document architecture and technical decisions
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `architecture`, `documentation`
+**Status:** Planned · **Label:** `documentation`
 
 Keep the architecture and rationale aligned with the shipped implementation.
 
@@ -682,7 +682,7 @@ TestFlight distribution and real-user testing.
 
 ### M4-39 — Configure application signing
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `setup`
+**Status:** Planned · **Label:** `setup`
 
 Prepare the Apple signing configuration needed for beta distribution.
 
@@ -693,7 +693,7 @@ Acceptance criteria (proposed):
 
 ### M4-40 — Configure TestFlight build
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `setup`, `testing`
+**Status:** Planned · **Label:** `setup`
 
 Prepare and distribute a testable iOS beta through TestFlight.
 
@@ -710,7 +710,7 @@ Final completion dependencies: `M4-39`.
 
 ### M4-41 — Recruit beta testers
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `testing`
+**Status:** Planned · **Label:** `testing`
 
 Find a small group matching the initial student and professional audience.
 
@@ -725,7 +725,7 @@ Implementation notes:
 
 ### M4-42 — Create beta feedback process
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `testing`, `documentation`
+**Status:** Planned · **Label:** `testing`
 
 Make reports reproducible and useful without unnecessary personal data.
 
@@ -736,7 +736,7 @@ Acceptance criteria (proposed):
 
 ### M4-43 — Conduct real-world geofence reliability testing
 
-**Status:** Planned · **Priority:** P0-critical · **Labels:** `testing`, `geofencing`, `location`
+**Status:** Planned · **Label:** `testing`
 
 Evaluate departure usefulness across actual iPhone usage conditions.
 
@@ -754,7 +754,7 @@ Final completion dependencies: `M4-40`, `M2-21`.
 
 ### M4-44 — Analyze beta feedback
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `testing`, `documentation`
+**Status:** Planned · **Label:** `testing`
 
 Turn reported experiences into reproducible findings and product decisions.
 
@@ -767,7 +767,7 @@ Final completion dependencies: `M4-42`, `M4-43`.
 
 ### M4-45 — Prioritize V1 release bugs
 
-**Status:** Planned · **Priority:** P1-high · **Labels:** `bug`, `testing`
+**Status:** Planned · **Label:** `bug`
 
 Choose and resolve the issues that block a useful first release.
 
@@ -780,7 +780,7 @@ Final completion dependencies: `M4-44`.
 
 ### M4-46 — Prepare App Store listing
 
-**Status:** Planned · **Priority:** P2-medium · **Labels:** `documentation`, `privacy`
+**Status:** Planned · **Label:** `documentation`
 
 Prepare accurate product, screenshot, and privacy materials for a possible public release.
 
@@ -798,4 +798,4 @@ Final completion dependencies: `M4-45`.
 
 ## Future roadmap boundary
 
-The supplied source lists **snooze reminder** and **multiple locations** under potential V1.1, then ends with the incomplete text **“- Rule”**. No completion of that fragment is assumed, and no additional roadmap items are invented here. The `future` label is available for later planning; these incomplete future notes do not add to the 46-item count.
+The supplied source lists **snooze reminder** and **multiple locations** under potential V1.1, then ends with the incomplete text **“- Rule”**. No completion of that fragment is assumed, and no additional roadmap items are invented here. These incomplete future notes do not add to the 46-item count.

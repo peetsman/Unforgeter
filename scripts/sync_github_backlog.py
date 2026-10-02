@@ -30,11 +30,7 @@ MAP_PATH = ROOT / "docs" / "github-backlog-map.json"
 MARKER_PATTERN = re.compile(r"<!--\s*unforgeter-backlog:(M[0-4]-\d{2})\s*-->")
 LABEL_COLORS = {
     "feature": "a2eeef", "bug": "d73a4a", "setup": "c5def5",
-    "architecture": "5319e7", "UI/UX": "d4c5f9", "location": "0075ca",
-    "geofencing": "0052cc", "notifications": "bfd4f2", "data": "bfdadc",
-    "testing": "0e8a16", "documentation": "0075ca", "privacy": "e4e669",
-    "MVP": "006b75", "future": "ededed", "P0-critical": "b60205",
-    "P1-high": "d93f0b", "P2-medium": "fbca04", "P3-low": "c2e0c6",
+    "testing": "0e8a16", "documentation": "0075ca",
 }
 
 
