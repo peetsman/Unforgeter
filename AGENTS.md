@@ -10,3 +10,4 @@ Read README.md, docs/product-brief.md, docs/architecture.md, and docs/backlog.md
 - Keep personal coordinates, signing material, credentials, and unredacted device logs out of Git.
 - Preserve the existing GitHub repository and history. Use codex/ branches for changes. Source planning numbers in the backlog are not assumed GitHub issue numbers.
 - Record technical decisions and verification limitations. Prefer a small implementation over speculative abstractions.
+- Keep GitHub issue labels sparse: one simple category per issue by default, never more than two. The user prefers this over multiple topic, priority, and MVP badges.

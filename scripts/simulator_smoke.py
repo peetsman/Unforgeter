@@ -12,10 +12,16 @@ BUNDLE_ID = "com.peetsman.Unforgeter"
 
 
 def simctl(*args, timeout=60):
-    result = subprocess.run(
-        ["xcrun", "simctl", *args], check=True, capture_output=True,
-        text=True, timeout=timeout,
-    )
+    print(f"simctl {args[0]} (timeout {timeout}s)", flush=True)
+    try:
+        result = subprocess.run(
+            ["xcrun", "simctl", *args], check=True, capture_output=True,
+            text=True, timeout=timeout,
+        )
+    except subprocess.CalledProcessError as error:
+        print(error.stdout or "", flush=True)
+        print(error.stderr or "", flush=True)
+        raise
     return result.stdout
 
 
@@ -34,8 +40,9 @@ def main():
         simctl("boot", udid)
     simctl("bootstatus", udid, "-b", timeout=240)
     app = ROOT / "build/Debug/Build/Products/Debug-iphonesimulator/Unforgeter.app"
-    simctl("install", udid, str(app))
-    print(simctl("launch", udid, BUNDLE_ID), flush=True)
+    # Fresh hosted simulators can need extra time for their first installation.
+    simctl("install", udid, str(app), timeout=180)
+    print(simctl("launch", udid, BUNDLE_ID, timeout=120), flush=True)
     time.sleep(5)
     processes = simctl("spawn", udid, "launchctl", "list")
     live = [line for line in processes.splitlines() if BUNDLE_ID in line and line.split()[0].isdigit()]

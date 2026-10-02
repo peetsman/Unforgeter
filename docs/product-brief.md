@@ -10,11 +10,13 @@ The developer currently has **Windows only** and uses an iPhone. Swift/SwiftUI r
 
 ## Execution clarification
 
+Later user preference (2026-10-02): keep issue labels sparse—one simple category by default, at most two. This supersedes the source's multi-label recommendations below. Milestones still organize the phases.
+
 The milestone names and M0–M4 numbering remain as proposed. The first practical gate is the critical physical-iPhone test described in source section 14: register a test region, physically leave it, and observe a local “You left the zone.” notification. Complete that minimal feasibility slice before investing in the complete polished Rules UI. The source's later critical-path and sprint descriptions apply to the integrated MVP after that proof.
 
 A configured 25 m or 50 m radius is a product input, not a guarantee of precise or immediate iOS detection. Real-world reliability and delay must be measured. Product positioning describes the intended value; it is not evidence that the app has met it.
 
-The [local backlog](backlog.md) translates all 46 proposed items into stable planning IDs. References such as “ISSUE #1” and “#18” in the preserved source are **source planning numbers**, not verified GitHub issue numbers. No remote milestones, labels, or issues are claimed as created by this document.
+The [local backlog](backlog.md) translates all 46 proposed items into stable planning IDs. References such as “ISSUE #1” and “#18” in the preserved source are **source planning numbers**; the separate [publication map](github-backlog-map.json) records their actual GitHub issue numbers after creation.
 
 The supplied source ends partway through the V1.1 roadmap at **“- Rule”**. That fragment is preserved without guessing its continuation. Decisions left open by the source, such as overnight schedule semantics and persistence implementation, remain engineering choices to document and test.
 
