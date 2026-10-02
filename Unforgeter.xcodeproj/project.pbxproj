@@ -1,0 +1,35 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		996B970A321B55EB8B8F9A3A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unforgeter/App/UnforgeterApp.swift"; sourceTree = SOURCE_ROOT; };
+		AD538332C65FED922EF3E1D3 = {isa = PBXBuildFile; fileRef = 996B970A321B55EB8B8F9A3A; };
+		D7150AEE46725DD76AE4C079 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unforgeter/Models/TestZone.swift"; sourceTree = SOURCE_ROOT; };
+		F2778C63F6141DD10DA1EF24 = {isa = PBXBuildFile; fileRef = D7150AEE46725DD76AE4C079; };
+		69E5458C2E99E3D7B58B163B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unforgeter/Services/GeofenceProofController.swift"; sourceTree = SOURCE_ROOT; };
+		664D9D8901A3EE1D942A4135 = {isa = PBXBuildFile; fileRef = 69E5458C2E99E3D7B58B163B; };
+		1D7BACB36A1316504B51AB25 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unforgeter/Services/NotificationService.swift"; sourceTree = SOURCE_ROOT; };
+		B0A1D1826AC3057F1FA88813 = {isa = PBXBuildFile; fileRef = 1D7BACB36A1316504B51AB25; };
+		FA6FA9553613E4B2D0BDA41D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unforgeter/Services/ProofStore.swift"; sourceTree = SOURCE_ROOT; };
+		7C97AE019F7F4150F6666982 = {isa = PBXBuildFile; fileRef = FA6FA9553613E4B2D0BDA41D; };
+		5A8FE4DD33C02D886E05BC5C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unforgeter/Views/GeofenceProofView.swift"; sourceTree = SOURCE_ROOT; };
+		A9450A167EFF24DAA74CDE92 = {isa = PBXBuildFile; fileRef = 5A8FE4DD33C02D886E05BC5C; };
+		FF2CA3972653EC723E819830 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unforgeter/Views/TriggeredChecklistView.swift"; sourceTree = SOURCE_ROOT; };
+		35F5346A0786B9BAD0BA31C6 = {isa = PBXBuildFile; fileRef = FF2CA3972653EC723E819830; };
+		A172CEDCAE47474B615C54D5 = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Unforgeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD936FCBED631FA67E05C3EA = {isa = PBXGroup; children = (996B970A321B55EB8B8F9A3A, D7150AEE46725DD76AE4C079, 69E5458C2E99E3D7B58B163B, 1D7BACB36A1316504B51AB25, FA6FA9553613E4B2D0BDA41D, 5A8FE4DD33C02D886E05BC5C, FF2CA3972653EC723E819830, 0A3E27B8CA818264D75C8D81,); sourceTree = "<group>"; };
+		0A3E27B8CA818264D75C8D81 = {isa = PBXGroup; children = (A172CEDCAE47474B615C54D5,); name = Products; sourceTree = "<group>"; };
+		878A52FC5FF6A57D50B7B870 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (AD538332C65FED922EF3E1D3, F2778C63F6141DD10DA1EF24, 664D9D8901A3EE1D942A4135, B0A1D1826AC3057F1FA88813, 7C97AE019F7F4150F6666982, A9450A167EFF24DAA74CDE92, 35F5346A0786B9BAD0BA31C6,); runOnlyForDeploymentPostprocessing = 0; };
+		34A04005BCAF206EEC990BD9 = {isa = PBXNativeTarget; buildConfigurationList = 4A807E8A027297B0B93701FB; buildPhases = (878A52FC5FF6A57D50B7B870,); buildRules = (); dependencies = (); name = Unforgeter; productName = Unforgeter; productReference = A172CEDCAE47474B615C54D5; productType = "com.apple.product-type.application"; };
+		244210E48437B6556980A702 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 1600; TargetAttributes = {34A04005BCAF206EEC990BD9 = {CreatedOnToolsVersion = 16.0; }; }; }; buildConfigurationList = B4E10CAA9C5E22150B71559C; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base,); mainGroup = AD936FCBED631FA67E05C3EA; productRefGroup = 0A3E27B8CA818264D75C8D81; projectDirPath = ""; projectRoot = ""; targets = (34A04005BCAF206EEC990BD9,); };
+		73EBF6644258C120893E685D = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = "YES"; CLANG_ENABLE_OBJC_ARC = "YES"; SDKROOT = "iphoneos"; IPHONEOS_DEPLOYMENT_TARGET = "17.0"; SWIFT_VERSION = "5.0"; ENABLE_USER_SCRIPT_SANDBOXING = "YES"; GCC_C_LANGUAGE_STANDARD = "gnu17"; SWIFT_STRICT_CONCURRENCY = "targeted"; DEBUG_INFORMATION_FORMAT = "dwarf"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; ENABLE_TESTABILITY = "YES"; ONLY_ACTIVE_ARCH = "YES";}; name = Debug; };
+		6C7EFF6369083C8E1F2B1994 = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_NAME = "$(TARGET_NAME)"; PRODUCT_BUNDLE_IDENTIFIER = "com.peetsman.Unforgeter"; INFOPLIST_FILE = "Unforgeter/Resources/Info.plist"; GENERATE_INFOPLIST_FILE = "NO"; CODE_SIGN_STYLE = "Automatic"; TARGETED_DEVICE_FAMILY = "1"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = "NO"; CURRENT_PROJECT_VERSION = "1"; MARKETING_VERSION = "0.1.0"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";}; name = Debug; };
+		0B0C687DF8B6B8DC790B519C = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = "YES"; CLANG_ENABLE_OBJC_ARC = "YES"; SDKROOT = "iphoneos"; IPHONEOS_DEPLOYMENT_TARGET = "17.0"; SWIFT_VERSION = "5.0"; ENABLE_USER_SCRIPT_SANDBOXING = "YES"; GCC_C_LANGUAGE_STANDARD = "gnu17"; SWIFT_STRICT_CONCURRENCY = "targeted"; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_COMPILATION_MODE = "wholemodule"; VALIDATE_PRODUCT = "YES";}; name = Release; };
+		DD75E2CB1C510A828AC72D96 = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_NAME = "$(TARGET_NAME)"; PRODUCT_BUNDLE_IDENTIFIER = "com.peetsman.Unforgeter"; INFOPLIST_FILE = "Unforgeter/Resources/Info.plist"; GENERATE_INFOPLIST_FILE = "NO"; CODE_SIGN_STYLE = "Automatic"; TARGETED_DEVICE_FAMILY = "1"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = "NO"; CURRENT_PROJECT_VERSION = "1"; MARKETING_VERSION = "0.1.0"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";}; name = Release; };
+		B4E10CAA9C5E22150B71559C = {isa = XCConfigurationList; buildConfigurations = (73EBF6644258C120893E685D, 0B0C687DF8B6B8DC790B519C,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		4A807E8A027297B0B93701FB = {isa = XCConfigurationList; buildConfigurations = (6C7EFF6369083C8E1F2B1994, DD75E2CB1C510A828AC72D96,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+	};
+	rootObject = 244210E48437B6556980A702;
+}

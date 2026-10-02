@@ -1,0 +1,88 @@
+name: Bug report
+description: Report a reproducible failure in Unforgeter.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe observed behavior separately from what you expected.
+        For location reports, use a generic place name; exact home coordinates are unnecessary.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What went wrong?
+      description: Describe the failure and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Create a Rule with...
+        2. Start inside the region...
+        3. Leave the region...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Observed behavior
+      description: Include how often it happens and any observed delay.
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: App version or commit
+      placeholder: Version/build number or Git commit, if known
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Device and operating system
+      placeholder: iPhone model and iOS version, or Windows version for a tooling issue
+    validations:
+      required: true
+  - type: dropdown
+    id: test_method
+    attributes:
+      label: Test method
+      options:
+        - Physical iPhone
+        - iOS Simulator
+        - Debug simulated exit
+        - Unit test
+        - Windows tooling / documentation
+        - Other / unknown
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: Location and notification conditions
+      description: If relevant, include approximate radius, active days/times, local time zone, enabled state, permission state, notification settings, app state, and whether the phone started inside the zone. Avoid exact private coordinates.
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots
+      description: Include useful evidence with personal information removed. Distinguish debug-trigger results from physical departure results.
+    validations:
+      required: false
+  - type: input
+    id: related
+    attributes:
+      label: Related issue or local backlog ID
+      placeholder: Link a real GitHub issue or enter a local ID such as M2-18
+    validations:
+      required: false

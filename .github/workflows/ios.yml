@@ -1,0 +1,52 @@
+name: iOS foundation
+
+on:
+  push:
+    branches: [main, 'codex/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-core-tests:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Report installed toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+      - name: Check repository metadata
+        run: python3 scripts/validate_repository.py
+      - name: Run Rule engine and persistence tests
+        run: swift test --package-path Packages/UnforgeterCore
+      - name: Validate native project metadata
+        run: |
+          plutil -lint Unforgeter/Resources/Info.plist
+          plutil -lint Unforgeter.xcodeproj/project.pbxproj
+          xcodebuild -list -project Unforgeter.xcodeproj
+      - name: Build Debug for iOS Simulator (no signing)
+        run: >-
+          xcodebuild -project Unforgeter.xcodeproj -scheme Unforgeter
+          -configuration Debug -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath build/Debug CODE_SIGNING_ALLOWED=NO build
+      - name: Launch smoke test on an available iPhone Simulator
+        run: python3 scripts/simulator_smoke.py
+      - name: Save simulator launch evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulator-launch
+          path: build/evidence/simulator-launch.png
+          if-no-files-found: error
+      - name: Build Release without developer controls
+        run: >-
+          xcodebuild -project Unforgeter.xcodeproj -scheme Unforgeter
+          -configuration Release -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath build/Release CODE_SIGNING_ALLOWED=NO build

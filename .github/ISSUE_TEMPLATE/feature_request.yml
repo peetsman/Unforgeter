@@ -1,0 +1,83 @@
+name: Feature request
+description: Propose or refine an Unforgeter feature with reviewable acceptance criteria.
+title: "[Feature] "
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep V1 focused on local departure Rules, schedules, and checklists.
+        Local IDs such as M1-05 refer to docs/backlog.md; they are not GitHub issue numbers.
+  - type: input
+    id: local_id
+    attributes:
+      label: Local backlog ID
+      description: If this implements a planned item, copy its stable local ID.
+      placeholder: M1-05
+    validations:
+      required: false
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: Proposed milestone
+      options:
+        - M0 — Project Setup
+        - M1 — Rules MVP
+        - M2 — Geofencing MVP
+        - M3 — Product Polish
+        - M4 — Beta Release
+        - Unassigned / future
+      default: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Proposed priority
+      options:
+        - P0-critical
+        - P1-high
+        - P2-medium
+        - P3-low
+      default: 2
+    validations:
+      required: true
+  - type: textarea
+    id: user_need
+    attributes:
+      label: User need
+      description: Describe the concrete situation and the behavior that would help.
+      placeholder: When I leave Home during my morning schedule, I need...
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_behavior
+    attributes:
+      label: Proposed behavior and scope
+      description: Explain what changes, including relevant permission or unavailable states.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Use observable outcomes. Preserve existing criteria when importing a planned item.
+      placeholder: |
+        - [ ] The user can...
+        - [ ] When..., the app...
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: Include rule-engine tests, UI checks, or physical-iPhone testing when relevant. State which checks need an Apple/Xcode environment.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and open decisions
+      description: Link actual GitHub issues or name local backlog IDs. Note unresolved schedule, permission, or data behavior.
+    validations:
+      required: false
