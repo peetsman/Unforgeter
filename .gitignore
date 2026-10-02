@@ -1,0 +1,21 @@
+# macOS / Xcode
+.DS_Store
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+# Swift Package Manager
+.build/
+.swiftpm/
+# Local tooling / secrets
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+*.p12
+*.mobileprovision
+# Local evidence can contain home coordinates; publish only redacted results.
+test-results/local/

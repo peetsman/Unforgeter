@@ -1,0 +1,1233 @@
+{
+  "schemaVersion": 1,
+  "project": "Unforgeter",
+  "repository": "https://github.com/peetsman/Unforgeter",
+  "status": "Planning source. Published GitHub issue numbers are recorded separately in docs/github-backlog-map.json; acceptance criteria are not completion claims.",
+  "identifierPolicy": "localId is a stable planning identifier; sourceNumber preserves the user's source numbering and is never a GitHub issue number. Resolve milestone IDs and create labels before future API import. Do not send sourceNumber as an issue number.",
+  "executionOrder": "Minimal M0 native setup → physical proof slice from M2-16, M2-20, M2-17, M2-18, and M2-21 → complete M1 Rules MVP → complete M2 integration → M3 → M4. Milestone numbering remains unchanged.",
+  "proofGate": {
+    "name": "Physical iPhone departure notification",
+    "status": "unverified",
+    "constraint": "User currently has Windows only; an Apple/Xcode build and signing environment plus physical iPhone deployment is still needed.",
+    "acceptanceCriteria": [
+      "Install the minimal native prototype on a physical iPhone.",
+      "Register a known test zone and establish that the phone is inside it.",
+      "Move physically outside the zone under recorded permission and app conditions.",
+      "Observe a local “You left the zone.” notification and record latency and failures.",
+      "Repeat before investing in a polished complete UI; simulator and debug-trigger results are not proof of physical detection."
+    ],
+    "note": "This is an early slice of existing planned items, not a 47th backlog item."
+  },
+  "milestones": [
+    {
+      "id": "M0",
+      "title": "M0 — Project Setup",
+      "objective": "Repository, architecture and technical foundation."
+    },
+    {
+      "id": "M1",
+      "title": "M1 — Rules MVP",
+      "objective": "Create and manage reminder Rules."
+    },
+    {
+      "id": "M2",
+      "title": "M2 — Geofencing MVP",
+      "objective": "Make Rules actually trigger from real-world geofence exits."
+    },
+    {
+      "id": "M3",
+      "title": "M3 — Product Polish",
+      "objective": "Turn the working prototype into a portfolio/beta-quality application."
+    },
+    {
+      "id": "M4",
+      "title": "M4 — Beta Release",
+      "objective": "TestFlight distribution and real-user testing."
+    }
+  ],
+  "labels": [
+    "feature",
+    "setup",
+    "testing",
+    "documentation",
+    "bug"
+  ],
+  "boardWorkflow": [
+    "BACKLOG",
+    "READY",
+    "IN PROGRESS",
+    "REVIEW / TEST",
+    "DONE"
+  ],
+  "issues": [
+    {
+      "localId": "M0-01",
+      "sourceNumber": 1,
+      "milestone": "M0",
+      "title": "Initialize iOS application",
+      "labels": [
+        "setup"
+      ],
+      "priority": "P0-critical",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Create the native SwiftUI iOS application and repository foundation.",
+      "acceptanceCriteria": [
+        "An Xcode project is created.",
+        "The SwiftUI application launches.",
+        "The Git repository is configured.",
+        "A .gitignore is configured.",
+        "The basic folder structure exists.",
+        "The iOS application builds successfully.",
+        "Initial code is pushed to GitHub."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Current development computer is Windows only. Native iOS build, signing, and device deployment require an Apple/Xcode build environment; generating source on Windows does not satisfy build or launch criteria.",
+        "Perform only the minimal setup needed for the physical geofence proof before investing in polished UI.",
+        "Remote publishing is a separate action; this local backlog does not assert that code has been pushed."
+      ],
+      "dependsOn": [],
+      "body": "Create the native SwiftUI iOS application and repository foundation.\n\n## Acceptance criteria\n\n- [ ] An Xcode project is created.\n\n- [ ] The SwiftUI application launches.\n\n- [ ] The Git repository is configured.\n\n- [ ] A .gitignore is configured.\n\n- [ ] The basic folder structure exists.\n\n- [ ] The iOS application builds successfully.\n\n- [ ] Initial code is pushed to GitHub.\n\n## Implementation notes\n\n- Current development computer is Windows only. Native iOS build, signing, and device deployment require an Apple/Xcode build environment; generating source on Windows does not satisfy build or launch criteria.\n\n- Perform only the minimal setup needed for the physical geofence proof before investing in polished UI.\n\n- Remote publishing is a separate action; this local backlog does not assert that code has been pushed.\n\nSource planning item: 1. Local ID: M0-01. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M0-02",
+      "sourceNumber": 2,
+      "milestone": "M0",
+      "title": "Define application architecture",
+      "labels": [
+        "setup"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Define a small, understandable native architecture without unnecessary abstraction.",
+      "acceptanceCriteria": [
+        "Models are defined.",
+        "Views are defined.",
+        "Services are defined.",
+        "The persistence layer is defined.",
+        "The location/geofencing service is defined.",
+        "The notification service is defined.",
+        "The architecture is documented."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Keep architecture simple; do not over-engineer.",
+        "Prefer Swift/SwiftUI and native platform services. No backend is required for MVP."
+      ],
+      "dependsOn": [],
+      "body": "Define a small, understandable native architecture without unnecessary abstraction.\n\n## Acceptance criteria\n\n- [ ] Models are defined.\n\n- [ ] Views are defined.\n\n- [ ] Services are defined.\n\n- [ ] The persistence layer is defined.\n\n- [ ] The location/geofencing service is defined.\n\n- [ ] The notification service is defined.\n\n- [ ] The architecture is documented.\n\n## Implementation notes\n\n- Keep architecture simple; do not over-engineer.\n\n- Prefer Swift/SwiftUI and native platform services. No backend is required for MVP.\n\nSource planning item: 2. Local ID: M0-02. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M0-03",
+      "sourceNumber": 3,
+      "milestone": "M0",
+      "title": "Define Rule data model",
+      "labels": [
+        "setup"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Represent the departure schedule and its checklist as a persistable Rule.",
+      "acceptanceCriteria": [
+        "The model has a unique ID.",
+        "The model has a name.",
+        "The model has coordinates.",
+        "The model has a radius.",
+        "The model has active days.",
+        "The model has start and end times.",
+        "The model has checklist items.",
+        "The model has enabled/disabled state.",
+        "The model can be persisted."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Optional future fields in the source include locationName, triggerType, notificationMessage, cooldown, lastTriggered, creationDate, and modificationDate. Add them only when the current behavior requires them."
+      ],
+      "dependsOn": [
+        "M0-02"
+      ],
+      "body": "Represent the departure schedule and its checklist as a persistable Rule.\n\n## Acceptance criteria\n\n- [ ] The model has a unique ID.\n\n- [ ] The model has a name.\n\n- [ ] The model has coordinates.\n\n- [ ] The model has a radius.\n\n- [ ] The model has active days.\n\n- [ ] The model has start and end times.\n\n- [ ] The model has checklist items.\n\n- [ ] The model has enabled/disabled state.\n\n- [ ] The model can be persisted.\n\n## Implementation notes\n\n- Optional future fields in the source include locationName, triggerType, notificationMessage, cooldown, lastTriggered, creationDate, and modificationDate. Add them only when the current behavior requires them.\n\n## Dependencies\n\n- M0-02 (local planning ID)\n\nSource planning item: 3. Local ID: M0-03. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-04",
+      "sourceNumber": 4,
+      "milestone": "M1",
+      "title": "Build Rules home screen",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Give users a clear overview of saved Rules and a route to create one.",
+      "acceptanceCriteria": [
+        "Saved Rules are displayed.",
+        "Each Rule shows its name.",
+        "Each Rule shows a schedule summary.",
+        "Each Rule shows its enabled state.",
+        "An empty state is displayed when no Rules exist.",
+        "A New Rule button is available."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [],
+      "dependsOn": [
+        "M0-03",
+        "M1-11"
+      ],
+      "body": "Give users a clear overview of saved Rules and a route to create one.\n\n## Acceptance criteria\n\n- [ ] Saved Rules are displayed.\n\n- [ ] Each Rule shows its name.\n\n- [ ] Each Rule shows a schedule summary.\n\n- [ ] Each Rule shows its enabled state.\n\n- [ ] An empty state is displayed when no Rules exist.\n\n- [ ] A New Rule button is available.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\n- M1-11 (local planning ID)\n\nSource planning item: 4. Local ID: M1-04. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-05",
+      "sourceNumber": 5,
+      "milestone": "M1",
+      "title": "Build Create Rule flow",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Create a departure Rule through the agreed name, location, radius, schedule, and checklist workflow.",
+      "acceptanceCriteria": [
+        "The user can enter a Rule name.",
+        "The user can select a location.",
+        "The user can select a radius.",
+        "The user can select active days.",
+        "The user can set an active time window.",
+        "The user can create a checklist.",
+        "Input is validated.",
+        "Save and cancel actions are available."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "The first trigger type is leaving a location. Arriving is a possible future capability.",
+        "Build the complete flow after the physical geofence proof gate."
+      ],
+      "dependsOn": [
+        "M0-03",
+        "M1-06",
+        "M1-07",
+        "M1-08",
+        "M1-09",
+        "M1-10"
+      ],
+      "body": "Create a departure Rule through the agreed name, location, radius, schedule, and checklist workflow.\n\n## Acceptance criteria\n\n- [ ] The user can enter a Rule name.\n\n- [ ] The user can select a location.\n\n- [ ] The user can select a radius.\n\n- [ ] The user can select active days.\n\n- [ ] The user can set an active time window.\n\n- [ ] The user can create a checklist.\n\n- [ ] Input is validated.\n\n- [ ] Save and cancel actions are available.\n\n## Implementation notes\n\n- The first trigger type is leaving a location. Arriving is a possible future capability.\n\n- Build the complete flow after the physical geofence proof gate.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\n- M1-06 (local planning ID)\n\n- M1-07 (local planning ID)\n\n- M1-08 (local planning ID)\n\n- M1-09 (local planning ID)\n\n- M1-10 (local planning ID)\n\nSource planning item: 5. Local ID: M1-05. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-06",
+      "sourceNumber": 6,
+      "milestone": "M1",
+      "title": "Implement location selection",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Use MapKit to choose the origin location for a Rule.",
+      "acceptanceCriteria": [
+        "A MapKit map is displayed.",
+        "The user can select a location.",
+        "The selected point is displayed.",
+        "The coordinates are stored.",
+        "The selected location is associated with the Rule."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [],
+      "dependsOn": [
+        "M0-03"
+      ],
+      "body": "Use MapKit to choose the origin location for a Rule.\n\n## Acceptance criteria\n\n- [ ] A MapKit map is displayed.\n\n- [ ] The user can select a location.\n\n- [ ] The selected point is displayed.\n\n- [ ] The coordinates are stored.\n\n- [ ] The selected location is associated with the Rule.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\nSource planning item: 6. Local ID: M1-06. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-07",
+      "sourceNumber": 7,
+      "milestone": "M1",
+      "title": "Implement geofence radius selector",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Let users configure and understand the chosen radius.",
+      "acceptanceCriteria": [
+        "The user can select a radius.",
+        "The radius is displayed numerically.",
+        "A radius circle is displayed on the map.",
+        "The circle updates dynamically.",
+        "The radius is saved."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "The source suggests 25 m, 50 m, 100 m, and custom choices. These are proposed controls, not guarantees of iOS boundary precision or timely delivery.",
+        "Use physical testing to inform supported choices and product wording."
+      ],
+      "dependsOn": [
+        "M1-06"
+      ],
+      "body": "Let users configure and understand the chosen radius.\n\n## Acceptance criteria\n\n- [ ] The user can select a radius.\n\n- [ ] The radius is displayed numerically.\n\n- [ ] A radius circle is displayed on the map.\n\n- [ ] The circle updates dynamically.\n\n- [ ] The radius is saved.\n\n## Implementation notes\n\n- The source suggests 25 m, 50 m, 100 m, and custom choices. These are proposed controls, not guarantees of iOS boundary precision or timely delivery.\n\n- Use physical testing to inform supported choices and product wording.\n\n## Dependencies\n\n- M1-06 (local planning ID)\n\nSource planning item: 7. Local ID: M1-07. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-08",
+      "sourceNumber": 8,
+      "milestone": "M1",
+      "title": "Implement active-day selector",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Support recurring weekday schedules.",
+      "acceptanceCriteria": [
+        "Individual days are selectable.",
+        "Multiple days are supported.",
+        "At least one active day is required.",
+        "The selected days are persisted."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [],
+      "dependsOn": [
+        "M0-03"
+      ],
+      "body": "Support recurring weekday schedules.\n\n## Acceptance criteria\n\n- [ ] Individual days are selectable.\n\n- [ ] Multiple days are supported.\n\n- [ ] At least one active day is required.\n\n- [ ] The selected days are persisted.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\nSource planning item: 8. Local ID: M1-08. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-09",
+      "sourceNumber": 9,
+      "milestone": "M1",
+      "title": "Implement active-time window",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Configure the local time window used by Rule evaluation.",
+      "acceptanceCriteria": [
+        "The user can set a start time.",
+        "The user can set an end time.",
+        "The times are persisted.",
+        "The schedule can determine whether the current time is active."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Document and test time-boundary, overnight-window, time-zone, and daylight-saving behavior before claiming support; the source leaves those semantics open."
+      ],
+      "dependsOn": [
+        "M0-03"
+      ],
+      "body": "Configure the local time window used by Rule evaluation.\n\n## Acceptance criteria\n\n- [ ] The user can set a start time.\n\n- [ ] The user can set an end time.\n\n- [ ] The times are persisted.\n\n- [ ] The schedule can determine whether the current time is active.\n\n## Implementation notes\n\n- Document and test time-boundary, overnight-window, time-zone, and daylight-saving behavior before claiming support; the source leaves those semantics open.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\nSource planning item: 9. Local ID: M1-09. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-10",
+      "sourceNumber": 10,
+      "milestone": "M1",
+      "title": "Implement checklist editor",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Create and maintain a personalized, ordered checklist.",
+      "acceptanceCriteria": [
+        "The user can add an item.",
+        "The user can remove an item.",
+        "The user can edit an item.",
+        "The user can reorder items.",
+        "Empty items are prevented.",
+        "The checklist is persisted."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [],
+      "dependsOn": [
+        "M0-03"
+      ],
+      "body": "Create and maintain a personalized, ordered checklist.\n\n## Acceptance criteria\n\n- [ ] The user can add an item.\n\n- [ ] The user can remove an item.\n\n- [ ] The user can edit an item.\n\n- [ ] The user can reorder items.\n\n- [ ] Empty items are prevented.\n\n- [ ] The checklist is persisted.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\nSource planning item: 10. Local ID: M1-10. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-11",
+      "sourceNumber": 11,
+      "milestone": "M1",
+      "title": "Implement local Rule persistence",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Keep Rules locally across launches without an external server.",
+      "acceptanceCriteria": [
+        "Rules survive an app restart.",
+        "Rules can be retrieved.",
+        "Rules can be updated.",
+        "Rules can be deleted.",
+        "No external server is used."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "SwiftData or Core Data remains an implementation choice as appropriate; keep storage behind a small interface."
+      ],
+      "dependsOn": [
+        "M0-03"
+      ],
+      "body": "Keep Rules locally across launches without an external server.\n\n## Acceptance criteria\n\n- [ ] Rules survive an app restart.\n\n- [ ] Rules can be retrieved.\n\n- [ ] Rules can be updated.\n\n- [ ] Rules can be deleted.\n\n- [ ] No external server is used.\n\n## Implementation notes\n\n- SwiftData or Core Data remains an implementation choice as appropriate; keep storage behind a small interface.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\nSource planning item: 11. Local ID: M1-11. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-12",
+      "sourceNumber": 12,
+      "milestone": "M1",
+      "title": "Implement Rule details screen",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Display the Rule name, location, radius, days, time, and checklist together.",
+      "acceptanceCriteria": [
+        "The complete Rule is visible.",
+        "An edit button is available.",
+        "A delete option is available.",
+        "An enable/disable control is available."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [],
+      "dependsOn": [
+        "M1-04",
+        "M1-11"
+      ],
+      "body": "Display the Rule name, location, radius, days, time, and checklist together.\n\n## Acceptance criteria\n\n- [ ] The complete Rule is visible.\n\n- [ ] An edit button is available.\n\n- [ ] A delete option is available.\n\n- [ ] An enable/disable control is available.\n\n## Dependencies\n\n- M1-04 (local planning ID)\n\n- M1-11 (local planning ID)\n\nSource planning item: 12. Local ID: M1-12. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-13",
+      "sourceNumber": 13,
+      "milestone": "M1",
+      "title": "Edit existing Rule",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Allow changes to all properties of a saved Rule.",
+      "acceptanceCriteria": [
+        "Existing values populate the editor.",
+        "Every Rule property is editable.",
+        "Saving updates the Rule.",
+        "Canceling discards changes."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Changes affecting monitoring must later be reconciled with the monitored regions."
+      ],
+      "dependsOn": [
+        "M1-05",
+        "M1-11"
+      ],
+      "body": "Allow changes to all properties of a saved Rule.\n\n## Acceptance criteria\n\n- [ ] Existing values populate the editor.\n\n- [ ] Every Rule property is editable.\n\n- [ ] Saving updates the Rule.\n\n- [ ] Canceling discards changes.\n\n## Implementation notes\n\n- Changes affecting monitoring must later be reconciled with the monitored regions.\n\n## Dependencies\n\n- M1-05 (local planning ID)\n\n- M1-11 (local planning ID)\n\nSource planning item: 13. Local ID: M1-13. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-14",
+      "sourceNumber": 14,
+      "milestone": "M1",
+      "title": "Enable/disable Rule",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Temporarily suspend a Rule without deleting it.",
+      "acceptanceCriteria": [
+        "The user can toggle the enabled state.",
+        "The state persists.",
+        "The disabled state is visually clear.",
+        "Disabled Rules are excluded from trigger logic."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [],
+      "dependsOn": [
+        "M1-11",
+        "M2-19"
+      ],
+      "body": "Temporarily suspend a Rule without deleting it.\n\n## Acceptance criteria\n\n- [ ] The user can toggle the enabled state.\n\n- [ ] The state persists.\n\n- [ ] The disabled state is visually clear.\n\n- [ ] Disabled Rules are excluded from trigger logic.\n\n## Dependencies\n\n- M1-11 (local planning ID)\n\n- M2-19 (local planning ID)\n\nSource planning item: 14. Local ID: M1-14. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M1-15",
+      "sourceNumber": 15,
+      "milestone": "M1",
+      "title": "Delete Rule",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Remove a Rule and its monitoring after user confirmation.",
+      "acceptanceCriteria": [
+        "A delete option is available.",
+        "Deletion asks for confirmation.",
+        "The persisted Rule is removed.",
+        "Its associated geofence is removed."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [],
+      "dependsOn": [
+        "M1-11",
+        "M2-17"
+      ],
+      "body": "Remove a Rule and its monitoring after user confirmation.\n\n## Acceptance criteria\n\n- [ ] A delete option is available.\n\n- [ ] Deletion asks for confirmation.\n\n- [ ] The persisted Rule is removed.\n\n- [ ] Its associated geofence is removed.\n\n## Dependencies\n\n- M1-11 (local planning ID)\n\n- M2-17 (local planning ID)\n\nSource planning item: 15. Local ID: M1-15. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-16",
+      "sourceNumber": 16,
+      "milestone": "M2",
+      "title": "Implement location permission flow",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P0-critical",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Explain and request the location access needed for departure monitoring.",
+      "acceptanceCriteria": [
+        "The app requests appropriate location permission.",
+        "The reason for the permission is explained.",
+        "Approval is handled.",
+        "Denial is handled.",
+        "Restricted state is handled.",
+        "The app explains how permission can be restored."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Include the minimum permission path in the physical geofence proof.",
+        "Current iOS authorization behavior and device settings must be verified on an actual iPhone."
+      ],
+      "dependsOn": [
+        "M0-01"
+      ],
+      "body": "Explain and request the location access needed for departure monitoring.\n\n## Acceptance criteria\n\n- [ ] The app requests appropriate location permission.\n\n- [ ] The reason for the permission is explained.\n\n- [ ] Approval is handled.\n\n- [ ] Denial is handled.\n\n- [ ] Restricted state is handled.\n\n- [ ] The app explains how permission can be restored.\n\n## Implementation notes\n\n- Include the minimum permission path in the physical geofence proof.\n\n- Current iOS authorization behavior and device settings must be verified on an actual iPhone.\n\n## Dependencies\n\n- M0-01 (local planning ID)\n\nSource planning item: 16. Local ID: M2-16. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-17",
+      "sourceNumber": 17,
+      "milestone": "M2",
+      "title": "Register geofence for enabled Rule",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P0-critical",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Reconcile enabled Rule regions with iOS monitoring.",
+      "acceptanceCriteria": [
+        "Rule coordinates and radius are converted to a monitored region.",
+        "Enabled Rules are registered.",
+        "A unique Rule identifier is used.",
+        "Duplicate registrations are avoided.",
+        "Monitoring is removed when a Rule is disabled or deleted."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "For the first physical proof, a fixed test region can establish viability before the full persisted Rule integration.",
+        "Handle monitoring availability, platform limits, registration failures, and changed Rule geometry explicitly."
+      ],
+      "dependsOn": [
+        "M0-03",
+        "M2-16"
+      ],
+      "body": "Reconcile enabled Rule regions with iOS monitoring.\n\n## Acceptance criteria\n\n- [ ] Rule coordinates and radius are converted to a monitored region.\n\n- [ ] Enabled Rules are registered.\n\n- [ ] A unique Rule identifier is used.\n\n- [ ] Duplicate registrations are avoided.\n\n- [ ] Monitoring is removed when a Rule is disabled or deleted.\n\n## Implementation notes\n\n- For the first physical proof, a fixed test region can establish viability before the full persisted Rule integration.\n\n- Handle monitoring availability, platform limits, registration failures, and changed Rule geometry explicitly.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\n- M2-16 (local planning ID)\n\nSource planning item: 17. Local ID: M2-17. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-18",
+      "sourceNumber": 18,
+      "milestone": "M2",
+      "title": "Detect geofence EXIT event",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P0-critical",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Prove the highest-risk behavior: a physical iPhone reports leaving a monitored region.",
+      "acceptanceCriteria": [
+        "A region exit is detected.",
+        "The corresponding Rule is identified.",
+        "Exit handling works while the app is backgrounded/not foregrounded as permitted by iOS.",
+        "The event is logged for debugging."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Critical technical issue and first practical product gate when paired with M2-21.",
+        "The physical test starts inside the test zone, leaves it by walking or riding as a passenger, and observes the local notification.",
+        "Record observed timing and app/device conditions. A simulator or debug button does not satisfy the physical proof."
+      ],
+      "dependsOn": [
+        "M2-17"
+      ],
+      "body": "Prove the highest-risk behavior: a physical iPhone reports leaving a monitored region.\n\n## Acceptance criteria\n\n- [ ] A region exit is detected.\n\n- [ ] The corresponding Rule is identified.\n\n- [ ] Exit handling works while the app is backgrounded/not foregrounded as permitted by iOS.\n\n- [ ] The event is logged for debugging.\n\n## Implementation notes\n\n- Critical technical issue and first practical product gate when paired with M2-21.\n\n- The physical test starts inside the test zone, leaves it by walking or riding as a passenger, and observes the local notification.\n\n- Record observed timing and app/device conditions. A simulator or debug button does not satisfy the physical proof.\n\n## Dependencies\n\n- M2-17 (local planning ID)\n\nSource planning item: 18. Local ID: M2-18. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-19",
+      "sourceNumber": 19,
+      "milestone": "M2",
+      "title": "Build Rule evaluation engine",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Evaluate the enabled state, active day, and time window independently from iOS services.",
+      "acceptanceCriteria": [
+        "The engine checks whether the Rule is enabled.",
+        "The engine checks the active day.",
+        "The engine checks the active time.",
+        "The engine returns trigger/no-trigger.",
+        "The engine has unit tests."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Required source examples: Monday 07:15 true; Monday 10:00 false; Saturday 07:15 false; disabled Rule false for Morning Class, Mon–Fri 06:30–08:30.",
+        "Inject time/calendar inputs so tests do not depend on the current date or live device location."
+      ],
+      "dependsOn": [
+        "M0-03"
+      ],
+      "body": "Evaluate the enabled state, active day, and time window independently from iOS services.\n\n## Acceptance criteria\n\n- [ ] The engine checks whether the Rule is enabled.\n\n- [ ] The engine checks the active day.\n\n- [ ] The engine checks the active time.\n\n- [ ] The engine returns trigger/no-trigger.\n\n- [ ] The engine has unit tests.\n\n## Implementation notes\n\n- Required source examples: Monday 07:15 true; Monday 10:00 false; Saturday 07:15 false; disabled Rule false for Morning Class, Mon–Fri 06:30–08:30.\n\n- Inject time/calendar inputs so tests do not depend on the current date or live device location.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\nSource planning item: 19. Local ID: M2-19. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-20",
+      "sourceNumber": 20,
+      "milestone": "M2",
+      "title": "Implement notification permissions",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P0-critical",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Request and explain local-notification authorization.",
+      "acceptanceCriteria": [
+        "The app requests notification authorization.",
+        "Allowed state is handled.",
+        "Denied state is handled.",
+        "The necessity of notifications is explained."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Include this in the first physical geofence proof."
+      ],
+      "dependsOn": [
+        "M0-01"
+      ],
+      "body": "Request and explain local-notification authorization.\n\n## Acceptance criteria\n\n- [ ] The app requests notification authorization.\n\n- [ ] Allowed state is handled.\n\n- [ ] Denied state is handled.\n\n- [ ] The necessity of notifications is explained.\n\n## Implementation notes\n\n- Include this in the first physical geofence proof.\n\n## Dependencies\n\n- M0-01 (local planning ID)\n\nSource planning item: 20. Local ID: M2-20. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-21",
+      "sourceNumber": 21,
+      "milestone": "M2",
+      "title": "Trigger Unforgeter notification",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P0-critical",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Send the matching reminder after a valid departure and route the notification tap to its checklist.",
+      "acceptanceCriteria": [
+        "A notification is sent after a valid exit.",
+        "The correct Rule is displayed.",
+        "The notification works when the application is not foregrounded as supported.",
+        "Tapping the notification opens the corresponding checklist."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "The initial proof uses the message “You left the zone.” The final Rule-aware implementation completes all criteria above.",
+        "No claim of instant, exact-distance, or guaranteed notification delivery should be made from simulated results."
+      ],
+      "dependsOn": [
+        "M2-18",
+        "M2-19",
+        "M2-20",
+        "M2-22",
+        "M2-23"
+      ],
+      "body": "Send the matching reminder after a valid departure and route the notification tap to its checklist.\n\n## Acceptance criteria\n\n- [ ] A notification is sent after a valid exit.\n\n- [ ] The correct Rule is displayed.\n\n- [ ] The notification works when the application is not foregrounded as supported.\n\n- [ ] Tapping the notification opens the corresponding checklist.\n\n## Implementation notes\n\n- The initial proof uses the message “You left the zone.” The final Rule-aware implementation completes all criteria above.\n\n- No claim of instant, exact-distance, or guaranteed notification delivery should be made from simulated results.\n\n## Dependencies\n\n- M2-18 (local planning ID)\n\n- M2-19 (local planning ID)\n\n- M2-20 (local planning ID)\n\n- M2-22 (local planning ID)\n\n- M2-23 (local planning ID)\n\nSource planning item: 21. Local ID: M2-21. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-22",
+      "sourceNumber": 22,
+      "milestone": "M2",
+      "title": "Build triggered checklist screen",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Show the checklist associated with the departure notification.",
+      "acceptanceCriteria": [
+        "The correct checklist is displayed.",
+        "Checklist items are checkable.",
+        "An “I've got everything” button is available.",
+        "Appropriate checklist reset behavior is defined and implemented."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Document whether completion applies to the current reminder session; avoid silently deleting the saved checklist."
+      ],
+      "dependsOn": [
+        "M1-11"
+      ],
+      "body": "Show the checklist associated with the departure notification.\n\n## Acceptance criteria\n\n- [ ] The correct checklist is displayed.\n\n- [ ] Checklist items are checkable.\n\n- [ ] An “I've got everything” button is available.\n\n- [ ] Appropriate checklist reset behavior is defined and implemented.\n\n## Implementation notes\n\n- Document whether completion applies to the current reminder session; avoid silently deleting the saved checklist.\n\n## Dependencies\n\n- M1-11 (local planning ID)\n\nSource planning item: 22. Local ID: M2-22. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-23",
+      "sourceNumber": 23,
+      "milestone": "M2",
+      "title": "Prevent duplicate notifications",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Suppress repeated boundary events while allowing later legitimate departures.",
+      "acceptanceCriteria": [
+        "A cooldown policy is defined.",
+        "The last trigger is recorded.",
+        "Duplicate exits during the cooldown are ignored.",
+        "Future legitimate departures are permitted."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "The source identifies GPS/geofence uncertainty near the boundary as the reason for protection.",
+        "Define clock-change, restart, and independent-Rule behavior and cover the chosen policy with meaningful tests."
+      ],
+      "dependsOn": [
+        "M0-03",
+        "M2-19"
+      ],
+      "body": "Suppress repeated boundary events while allowing later legitimate departures.\n\n## Acceptance criteria\n\n- [ ] A cooldown policy is defined.\n\n- [ ] The last trigger is recorded.\n\n- [ ] Duplicate exits during the cooldown are ignored.\n\n- [ ] Future legitimate departures are permitted.\n\n## Implementation notes\n\n- The source identifies GPS/geofence uncertainty near the boundary as the reason for protection.\n\n- Define clock-change, restart, and independent-Rule behavior and cover the chosen policy with meaningful tests.\n\n## Dependencies\n\n- M0-03 (local planning ID)\n\n- M2-19 (local planning ID)\n\nSource planning item: 23. Local ID: M2-23. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M2-24",
+      "sourceNumber": 24,
+      "milestone": "M2",
+      "title": "Add developer geofence testing tools",
+      "labels": [
+        "testing"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Make exit, evaluation, and notification paths inspectable during development.",
+      "acceptanceCriteria": [
+        "A simulated exit is available.",
+        "Rule evaluation can be tested.",
+        "A test notification can be sent.",
+        "Debug functionality is excluded or disabled in production."
+      ],
+      "criteriaProvenance": "User-provided; wording normalized without changing scope.",
+      "notes": [
+        "Use debug controls to isolate components; they supplement physical geofence testing."
+      ],
+      "dependsOn": [
+        "M2-19",
+        "M2-20"
+      ],
+      "body": "Make exit, evaluation, and notification paths inspectable during development.\n\n## Acceptance criteria\n\n- [ ] A simulated exit is available.\n\n- [ ] Rule evaluation can be tested.\n\n- [ ] A test notification can be sent.\n\n- [ ] Debug functionality is excluded or disabled in production.\n\n## Implementation notes\n\n- Use debug controls to isolate components; they supplement physical geofence testing.\n\n## Dependencies\n\n- M2-19 (local planning ID)\n\n- M2-20 (local planning ID)\n\nSource planning item: 24. Local ID: M2-24. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-25",
+      "sourceNumber": 25,
+      "milestone": "M3",
+      "title": "Design Unforgeter app icon",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Create a recognizable app icon suited to the Unforgeter name and purpose.",
+      "acceptanceCriteria": [
+        "An original icon design is selected.",
+        "Required app icon assets are added and checked at small sizes."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Create a recognizable app icon suited to the Unforgeter name and purpose.\n\n## Acceptance criteria\n\n- [ ] An original icon design is selected.\n\n- [ ] Required app icon assets are added and checked at small sizes.\n\nSource planning item: 25. Local ID: M3-25. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-26",
+      "sourceNumber": 26,
+      "milestone": "M3",
+      "title": "Create onboarding experience",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Introduce departure Rules and explain required permissions.",
+      "acceptanceCriteria": [
+        "Onboarding explains location, schedule, checklist, and the departure trigger.",
+        "Permission rationale matches actual behavior and the flow can be completed without trapping denied users."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Introduce departure Rules and explain required permissions.\n\n## Acceptance criteria\n\n- [ ] Onboarding explains location, schedule, checklist, and the departure trigger.\n\n- [ ] Permission rationale matches actual behavior and the flow can be completed without trapping denied users.\n\nSource planning item: 26. Local ID: M3-26. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-27",
+      "sourceNumber": 27,
+      "milestone": "M3",
+      "title": "Improve empty states",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Help users recover from empty or unavailable states.",
+      "acceptanceCriteria": [
+        "The empty Rules list gives a clear create action.",
+        "Missing permission or unavailable data states explain the next useful step."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Help users recover from empty or unavailable states.\n\n## Acceptance criteria\n\n- [ ] The empty Rules list gives a clear create action.\n\n- [ ] Missing permission or unavailable data states explain the next useful step.\n\nSource planning item: 27. Local ID: M3-27. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-28",
+      "sourceNumber": 28,
+      "milestone": "M3",
+      "title": "Add accessibility support",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Make core Rule and checklist tasks accessible.",
+      "acceptanceCriteria": [
+        "Core flows are checked with VoiceOver and Dynamic Type.",
+        "Controls have meaningful labels, adequate contrast, and usable touch targets."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Make core Rule and checklist tasks accessible.\n\n## Acceptance criteria\n\n- [ ] Core flows are checked with VoiceOver and Dynamic Type.\n\n- [ ] Controls have meaningful labels, adequate contrast, and usable touch targets.\n\nSource planning item: 28. Local ID: M3-28. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-29",
+      "sourceNumber": 29,
+      "milestone": "M3",
+      "title": "Add dark mode",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Make the interface readable in both appearance modes.",
+      "acceptanceCriteria": [
+        "Core screens support light and dark appearance.",
+        "Text, map overlays, and controls remain legible in both modes."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Make the interface readable in both appearance modes.\n\n## Acceptance criteria\n\n- [ ] Core screens support light and dark appearance.\n\n- [ ] Text, map overlays, and controls remain legible in both modes.\n\nSource planning item: 29. Local ID: M3-29. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-30",
+      "sourceNumber": 30,
+      "milestone": "M3",
+      "title": "Add Rule duplication",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Use an existing Rule as a starting point for another routine.",
+      "acceptanceCriteria": [
+        "Duplicating creates a distinct ID and editable copy.",
+        "The original Rule remains unchanged and monitoring registration remains consistent."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Use an existing Rule as a starting point for another routine.\n\n## Acceptance criteria\n\n- [ ] Duplicating creates a distinct ID and editable copy.\n\n- [ ] The original Rule remains unchanged and monitoring registration remains consistent.\n\nSource planning item: 30. Local ID: M3-30. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-31",
+      "sourceNumber": 31,
+      "milestone": "M3",
+      "title": "Add notification/history functionality",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P3-low",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Provide a small local history of reminder activity.",
+      "acceptanceCriteria": [
+        "The history scope and local retention policy are defined.",
+        "Relevant reminder events can be viewed and cleared without adding remote analytics."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Provide a small local history of reminder activity.\n\n## Acceptance criteria\n\n- [ ] The history scope and local retention policy are defined.\n\n- [ ] Relevant reminder events can be viewed and cleared without adding remote analytics.\n\nSource planning item: 31. Local ID: M3-31. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-32",
+      "sourceNumber": 32,
+      "milestone": "M3",
+      "title": "Add human-readable location naming",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Show names such as Home alongside the underlying location.",
+      "acceptanceCriteria": [
+        "A location name can be supplied and persisted.",
+        "Names appear consistently without replacing the stored coordinates."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Show names such as Home alongside the underlying location.\n\n## Acceptance criteria\n\n- [ ] A location name can be supplied and persisted.\n\n- [ ] Names appear consistently without replacing the stored coordinates.\n\nSource planning item: 32. Local ID: M3-32. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-33",
+      "sourceNumber": 33,
+      "milestone": "M3",
+      "title": "Add preset Rule templates",
+      "labels": [
+        "feature"
+      ],
+      "priority": "P3-low",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Offer editable starting points for common routines.",
+      "acceptanceCriteria": [
+        "Selected templates prefill useful example fields.",
+        "Users can review all values before saving a Rule."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Offer editable starting points for common routines.\n\n## Acceptance criteria\n\n- [ ] Selected templates prefill useful example fields.\n\n- [ ] Users can review all values before saving a Rule.\n\nSource planning item: 33. Local ID: M3-33. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-34",
+      "sourceNumber": 34,
+      "milestone": "M3",
+      "title": "Add automated UI tests",
+      "labels": [
+        "testing"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Cover the highest-value user flows with native UI automation.",
+      "acceptanceCriteria": [
+        "Tests cover creating, editing, and deleting a Rule.",
+        "Tests exercise opening the checklist and run in an available Xcode environment."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Cover the highest-value user flows with native UI automation.\n\n## Acceptance criteria\n\n- [ ] Tests cover creating, editing, and deleting a Rule.\n\n- [ ] Tests exercise opening the checklist and run in an available Xcode environment.\n\nSource planning item: 34. Local ID: M3-34. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-35",
+      "sourceNumber": 35,
+      "milestone": "M3",
+      "title": "Expand unit-test suite",
+      "labels": [
+        "testing"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Cover remaining meaningful edge cases in Rule logic and persistence.",
+      "acceptanceCriteria": [
+        "The suite covers schedule boundaries, chosen time-zone policy, and cooldown behavior.",
+        "Persistence and state transitions have focused regression coverage."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Cover remaining meaningful edge cases in Rule logic and persistence.\n\n## Acceptance criteria\n\n- [ ] The suite covers schedule boundaries, chosen time-zone policy, and cooldown behavior.\n\n- [ ] Persistence and state transitions have focused regression coverage.\n\nSource planning item: 35. Local ID: M3-35. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-36",
+      "sourceNumber": 36,
+      "milestone": "M3",
+      "title": "Add privacy information screen",
+      "labels": [
+        "documentation"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Explain why location and notification access is used and where data remains.",
+      "acceptanceCriteria": [
+        "The screen accurately explains permissions and local data handling.",
+        "It explains relevant settings and data deletion without claiming unimplemented protections."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Explain why location and notification access is used and where data remains.\n\n## Acceptance criteria\n\n- [ ] The screen accurately explains permissions and local data handling.\n\n- [ ] It explains relevant settings and data deletion without claiming unimplemented protections.\n\nSource planning item: 36. Local ID: M3-36. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-37",
+      "sourceNumber": 37,
+      "milestone": "M3",
+      "title": "Create README screenshots/demo GIF",
+      "labels": [
+        "documentation"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Show the implemented product in the portfolio README.",
+      "acceptanceCriteria": [
+        "Screenshots and a short demo reflect an actual running build.",
+        "Media includes useful descriptions and contains no unintended personal location data."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Show the implemented product in the portfolio README.\n\n## Acceptance criteria\n\n- [ ] Screenshots and a short demo reflect an actual running build.\n\n- [ ] Media includes useful descriptions and contains no unintended personal location data.\n\nSource planning item: 37. Local ID: M3-37. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M3-38",
+      "sourceNumber": 38,
+      "milestone": "M3",
+      "title": "Document architecture and technical decisions",
+      "labels": [
+        "documentation"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Keep the architecture and rationale aligned with the shipped implementation.",
+      "acceptanceCriteria": [
+        "Documentation describes Rule evaluation, persistence, geofencing, and notifications.",
+        "Major decisions and platform limitations are recorded with verification status."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Keep the architecture and rationale aligned with the shipped implementation.\n\n## Acceptance criteria\n\n- [ ] Documentation describes Rule evaluation, persistence, geofencing, and notifications.\n\n- [ ] Major decisions and platform limitations are recorded with verification status.\n\nSource planning item: 38. Local ID: M3-38. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M4-39",
+      "sourceNumber": 39,
+      "milestone": "M4",
+      "title": "Configure application signing",
+      "labels": [
+        "setup"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Prepare the Apple signing configuration needed for beta distribution.",
+      "acceptanceCriteria": [
+        "The intended bundle identifier and development team are configured.",
+        "A build can be signed in an authorized Apple/Xcode environment without committing credentials."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Prepare the Apple signing configuration needed for beta distribution.\n\n## Acceptance criteria\n\n- [ ] The intended bundle identifier and development team are configured.\n\n- [ ] A build can be signed in an authorized Apple/Xcode environment without committing credentials.\n\nSource planning item: 39. Local ID: M4-39. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M4-40",
+      "sourceNumber": 40,
+      "milestone": "M4",
+      "title": "Configure TestFlight build",
+      "labels": [
+        "setup"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Prepare and distribute a testable iOS beta through TestFlight.",
+      "acceptanceCriteria": [
+        "A signed archive is uploaded and processed successfully.",
+        "An authorized tester can install the intended build through TestFlight."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [
+        "Requires the necessary Apple account, signing, and distribution access."
+      ],
+      "dependsOn": [
+        "M4-39"
+      ],
+      "body": "Prepare and distribute a testable iOS beta through TestFlight.\n\n## Acceptance criteria\n\n- [ ] A signed archive is uploaded and processed successfully.\n\n- [ ] An authorized tester can install the intended build through TestFlight.\n\n## Implementation notes\n\n- Requires the necessary Apple account, signing, and distribution access.\n\n## Dependencies\n\n- M4-39 (local planning ID)\n\nSource planning item: 40. Local ID: M4-40. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M4-41",
+      "sourceNumber": 41,
+      "milestone": "M4",
+      "title": "Recruit beta testers",
+      "labels": [
+        "testing"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Find a small group matching the initial student and professional audience.",
+      "acceptanceCriteria": [
+        "A target tester group and recruitment message are prepared.",
+        "Invited testers receive installation and feedback instructions."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [
+        "External outreach is a future execution task, not performed by this local backlog."
+      ],
+      "dependsOn": [],
+      "body": "Find a small group matching the initial student and professional audience.\n\n## Acceptance criteria\n\n- [ ] A target tester group and recruitment message are prepared.\n\n- [ ] Invited testers receive installation and feedback instructions.\n\n## Implementation notes\n\n- External outreach is a future execution task, not performed by this local backlog.\n\nSource planning item: 41. Local ID: M4-41. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M4-42",
+      "sourceNumber": 42,
+      "milestone": "M4",
+      "title": "Create beta feedback process",
+      "labels": [
+        "testing"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Make reports reproducible and useful without unnecessary personal data.",
+      "acceptanceCriteria": [
+        "A feedback route and minimal reporting fields are available.",
+        "Reports capture build, iOS version, expected behavior, observed behavior, and relevant permission/app state."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [],
+      "body": "Make reports reproducible and useful without unnecessary personal data.\n\n## Acceptance criteria\n\n- [ ] A feedback route and minimal reporting fields are available.\n\n- [ ] Reports capture build, iOS version, expected behavior, observed behavior, and relevant permission/app state.\n\nSource planning item: 42. Local ID: M4-42. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M4-43",
+      "sourceNumber": 43,
+      "milestone": "M4",
+      "title": "Conduct real-world geofence reliability testing",
+      "labels": [
+        "testing"
+      ],
+      "priority": "P0-critical",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Evaluate departure usefulness across actual iPhone usage conditions.",
+      "acceptanceCriteria": [
+        "A physical test matrix covers representative radii, schedules, permissions, and supported app states.",
+        "Results record notification delay, missed events, duplicates, and device conditions.",
+        "Findings inform supported behavior and release readiness."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [
+        "This broader beta study follows, and does not replace, the earlier minimal physical proof gate."
+      ],
+      "dependsOn": [
+        "M4-40",
+        "M2-21"
+      ],
+      "body": "Evaluate departure usefulness across actual iPhone usage conditions.\n\n## Acceptance criteria\n\n- [ ] A physical test matrix covers representative radii, schedules, permissions, and supported app states.\n\n- [ ] Results record notification delay, missed events, duplicates, and device conditions.\n\n- [ ] Findings inform supported behavior and release readiness.\n\n## Implementation notes\n\n- This broader beta study follows, and does not replace, the earlier minimal physical proof gate.\n\n## Dependencies\n\n- M4-40 (local planning ID)\n\n- M2-21 (local planning ID)\n\nSource planning item: 43. Local ID: M4-43. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M4-44",
+      "sourceNumber": 44,
+      "milestone": "M4",
+      "title": "Analyze beta feedback",
+      "labels": [
+        "testing"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Turn reported experiences into reproducible findings and product decisions.",
+      "acceptanceCriteria": [
+        "Feedback is grouped by recurring usability and reliability themes.",
+        "Actionable findings are linked to reproducible bug or improvement work."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [
+        "M4-42",
+        "M4-43"
+      ],
+      "body": "Turn reported experiences into reproducible findings and product decisions.\n\n## Acceptance criteria\n\n- [ ] Feedback is grouped by recurring usability and reliability themes.\n\n- [ ] Actionable findings are linked to reproducible bug or improvement work.\n\n## Dependencies\n\n- M4-42 (local planning ID)\n\n- M4-43 (local planning ID)\n\nSource planning item: 44. Local ID: M4-44. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M4-45",
+      "sourceNumber": 45,
+      "milestone": "M4",
+      "title": "Prioritize V1 release bugs",
+      "labels": [
+        "bug"
+      ],
+      "priority": "P1-high",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Choose and resolve the issues that block a useful first release.",
+      "acceptanceCriteria": [
+        "Release-blocking issues are explicitly prioritized.",
+        "Fixes receive targeted verification and remaining limitations are documented."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [],
+      "dependsOn": [
+        "M4-44"
+      ],
+      "body": "Choose and resolve the issues that block a useful first release.\n\n## Acceptance criteria\n\n- [ ] Release-blocking issues are explicitly prioritized.\n\n- [ ] Fixes receive targeted verification and remaining limitations are documented.\n\n## Dependencies\n\n- M4-44 (local planning ID)\n\nSource planning item: 45. Local ID: M4-45. This is not a GitHub issue number."
+    },
+    {
+      "localId": "M4-46",
+      "sourceNumber": 46,
+      "milestone": "M4",
+      "title": "Prepare App Store listing",
+      "labels": [
+        "documentation"
+      ],
+      "priority": "P2-medium",
+      "state": "planned",
+      "githubIssueNumber": null,
+      "description": "Prepare accurate product, screenshot, and privacy materials for a possible public release.",
+      "acceptanceCriteria": [
+        "Draft listing copy and screenshots match the actual app.",
+        "Required privacy and support information is prepared and checked against implemented behavior.",
+        "Submission readiness is reviewed separately from drafting."
+      ],
+      "criteriaProvenance": "Proposed planning criteria; original source supplied title only.",
+      "notes": [
+        "Preparing a listing does not mean the app has been submitted, accepted, or published."
+      ],
+      "dependsOn": [
+        "M4-45"
+      ],
+      "body": "Prepare accurate product, screenshot, and privacy materials for a possible public release.\n\n## Acceptance criteria\n\n- [ ] Draft listing copy and screenshots match the actual app.\n\n- [ ] Required privacy and support information is prepared and checked against implemented behavior.\n\n- [ ] Submission readiness is reviewed separately from drafting.\n\n## Implementation notes\n\n- Preparing a listing does not mean the app has been submitted, accepted, or published.\n\n## Dependencies\n\n- M4-45 (local planning ID)\n\nSource planning item: 46. Local ID: M4-46. This is not a GitHub issue number."
+    }
+  ]
+}
